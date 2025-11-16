@@ -5,14 +5,21 @@ import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { toast } from 'sonner';
-import * as Icons from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 
 // Get all available icons from lucide-react
-const iconList = Object.keys(Icons)
-  .filter((key) => key !== 'createLucideIcon' && key !== 'default')
-  .map((name) => ({
+const iconList = Object.entries(LucideIcons)
+  .filter(([key, value]) => {
+    return (
+      key !== 'createLucideIcon' && 
+      key !== 'default' &&
+      typeof value === 'function' &&
+      key[0] === key[0].toUpperCase()
+    );
+  })
+  .map(([name, component]) => ({
     name,
-    component: Icons[name as keyof typeof Icons],
+    component,
   }));
 
 const categories = [
