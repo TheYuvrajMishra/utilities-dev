@@ -1,312 +1,234 @@
-# DevUtilities – Next.js Developer Utility Hub
+DevUtilities – Next.js Developer Utility Hub (Enhanced Prompt)
+Build a modern, production-ready Next.js web application named DevUtilities. This document serves as a complete specification and prompt for generating the application.
 
-Build a modern, production-ready **Next.js** web application named **DevUtilities**.  
-This document serves as a **complete specification and prompt** for generating the application.
-
----
-
-## 1. Project Overview
-
-DevUtilities is a **central hub of tools, assets, and utilities for developers**.
+1. Project Overview
+DevUtilities is a central hub of tools, assets, and utilities for developers.
 
 Key objectives:
 
-- Provide a **rich, premium UI** with a **professional documentation-style layout**.
-- Offer **numerous professional fonts**, **high-quality SVGs**, and **developer utilities** frequently needed in daily workflows.
-- Maintain a **cohesive design system** with strong typography, spacing, and accessibility.
+Provide a rich, premium UI with a professional documentation-style layout.
 
----
+Offer numerous professional fonts, high-quality SVGs, and developer utilities frequently needed in daily workflows.
 
-## 2. Branding & Design System
+Maintain a cohesive design system with strong typography, spacing, and accessibility.
 
-### 2.1 Color Palette
+2. Branding & Design System
+2.1 Color Palette
+Primary Background: #0d0d0d (dark, near-black). Apply to <body>.
 
-- Primary Background: `#0d0d0d` (dark, near-black)
-- Primary Foreground/Text: `#ffffff` (white)
-- Optional Accent (for highlights, links, CTA):
-  - `#3b82f6` (blue) or a similar professional accent
-- Use subtle variations of grey for borders, cards, and muted text.
+Primary Foreground/Text: #ffffff (white).
 
-### 2.2 Layout Style
+Muted Text: #a1a1aa (Tailwind's zinc-400).
 
-- Overall Style:  
-  - **Rich, elegant, modern**, inspired by high-end developer tools and documentation sites.
-  - Looks like a **premium documentation platform** (e.g., modern API docs / developer platforms).
-- Structure:
-  - Left sidebar navigation (for sections)
-  - Top bar with search and quick actions
-  - Main content area with documentation-style blocks
-  - Optional right-side panel for quick utilities, notes, or related items
-- Spacing:
-  - Generous padding and margin
-  - Clear hierarchy using headings, subheadings, and cards
-  - Consistent vertical rhythm
+Borders & Dividers: #27272a (Tailwind's zinc-800).
 
-### 2.3 Typography (Use Good Professional Fonts)
+Card/Surface Background: #18181b (Tailwind's zinc-900).
 
-Use **clean, modern, professional fonts** suitable for a developer platform and documentation.
+Primary Accent: #3b82f6 (Tailwind's blue-500).
 
-Suggestions (font stack examples, choose any similar system):
+Accent Hover: #2563eb (Tailwind's blue-600).
 
-- Primary UI Font:
-  - `Inter`, `SF Pro Text`, `Satoshi`, or similar modern sans-serif.
-- Code / Monospace Font:
-  - `JetBrains Mono`, `Fira Code`, or similar.
+2.2 Layout Style
+Overall Style: Rich, elegant, modern, inspired by high-end developer tools (e.g., Vercel, Stripe Docs).
 
-Typography requirements:
+Structure:
 
-- Clear hierarchy: `h1`, `h2`, `h3`, `h4`, body, captions.
-- Use comfortable line heights for long-form documentation.
-- Use a distinct monospace font for code snippets and utility outputs.
+Fixed Left Sidebar (for primary navigation).
 
----
+Sticky Topbar (for search, breadcrumbs, and quick actions).
 
-## 3. Technology Stack
+Main Content Area (with generous padding).
 
-- **Framework:** Next.js (latest stable, App Router)
-- **UI / Styling:** Tailwind CSS + custom utility classes
-- **Language:** TypeScript (recommended)
-- **Icons / SVG:** Custom SVG library or a structured SVG icon system
-- **State Management:** React hooks and simple state; no heavy library unless needed
-- **Other:**
-  - SEO metadata configuration
-  - Code splitting and performance optimization
-  - Responsive and mobile-first design
+Optional Right-Side Panel (for "On This Page" ToC in docs).
 
----
+2.3 Typography (Use Good Professional Fonts)
+Primary UI Font: Inter (or Satoshi). Use a variable font for best performance.
 
-## 4. Application Structure
+Code / Monospace Font: JetBrains Mono (or Fira Code).
 
-### 4.1 High-Level Pages / Sections
+Hierarchy:
 
-1. **Landing / Home Page**
-   - Brief introduction to DevUtilities
-   - Highlight major features and tools
-   - Clear CTA to start using utilities
+h1: text-3xl lg:text-4xl font-bold tracking-tight
 
-2. **Typography Library**
-   - Browse professional font pairs and suggestions
-   - Preview headings, body text, and code blocks
-   - Provide suggested CSS/Tailwind font configurations
-   - Copy-to-clipboard for font configurations
+h2: text-2xl font-semibold tracking-tight border-b border-zinc-800 pb-2
 
-3. **SVG & Icons Library**
-   - Grid of SVG icons and professional illustrations
-   - Filtering and search (by name, category, style)
-   - Quick preview on dark/light background
-   - Copy SVG code or download SVG file
+h3: text-xl font-semibold
 
-4. **Colors & Gradients**
-   - Curated color palettes for UI
-   - Gradient presets (linear and radial)
-   - Ability to copy HEX/RGB/HSL values
-   - Preview components using selected colors
+p (Body): text-base text-zinc-300 (use text-white for emphasis, text-zinc-400 for muted).
 
-5. **UI / Code Snippets**
-   - Library of reusable UI snippets (cards, buttons, layouts)
-   - Tailwind-ready component examples
-   - Copy-to-clipboard for code blocks
-   - Sections for layout presets and CSS utilities (e.g., glassmorphism, shadows)
+code: Use the monospace font, bg-zinc-800, text-blue-300, px-1 py-0.5 rounded-md text-sm.
 
-6. **Data Conversion Tools**
-   - JSON formatter/beautifier and validator
-   - XML/SQL/Markdown formatter
-   - Base64 encode/decode
-   - Hash utilities (e.g., SHA-256, MD5) – client-side only
+2.4 Global Layout & Spacing System (NEW)
+This section defines the core layout and spacing to solve padding/margin inconsistencies.
 
-7. **Generators**
-   - UUID generator
-   - Random password generator with options (length, symbols, numbers)
-   - Token generator
-   - Slug generator
+Core Layout Structure:
 
-8. **Regex & Text Utilities**
-   - Regex tester with live match preview
-   - Common regex snippets library
-   - Text case converters (camelCase, snake_case, kebab-case, Title Case, etc.)
+Sidebar: fixed top-0 left-0 h-screen w-64 (Desktop). On mobile (<lg), it should be hidden and toggled.
 
-9. **Docs-Style Knowledge Section**
-   - Professional docs layout that explains:
-     - How to use each tool
-     - Best practices for fonts, colors, and component reuse
-   - Sidebar navigation for documentation topics
-   - Automatic table of contents in each doc page (optional)
+Main Wrapper: lg:ml-64 (to offset the sidebar on desktop).
 
-10. **(Optional) User Features**
-    - Authentication (login/signup) for saving:
-      - Favorite fonts, palettes, and snippets
-      - Custom collections and workspaces
+Topbar: sticky top-0 z-10 h-16 (Inside the Main Wrapper).
 
----
+Content Area: <main className="p-6 lg:p-10"> (This is the primary content padding).
 
-## 5. Step-by-Step Feature List (Implementation Guide)
+Spacing & Sizing Rules (Use Tailwind's scale):
 
-### Step 1: Project Setup
+Vertical Rhythm: Use space-y-6 or space-y-8 for stacking top-level sections in the content area.
 
-- Initialize a **Next.js** project with the App Router.
-- Configure **TypeScript**.
-- Install and configure **Tailwind CSS**.
-- Define global layout:
-  - Root layout with dark background (`#0d0d0d`)
-  - Base typography styles
-  - Global CSS reset
+Card Padding: All cards (e.g., tool cards, snippet cards) must use consistent padding. Default: p-6.
 
-### Step 2: Design System & Theme
-- Define base components:
-  - `Button`, `Card`, `Input`, `Textarea`, `Badge`, `Tooltip`
-- Good Well Professional Fonts.
+Gaps: Use gap-4 or gap-6 for grid and flex layouts.
 
-### Step 3: Navigation & Layout
+Inputs: Use h-10 for standard inputs/buttons.
 
-- Implement a shell layout:
-  - Fixed sidebar with:
-    - Logo / title: **DevUtilities**
-    - Navigation links to all major sections
-  - Topbar with:
-    - Global search input
-    - Quick-access buttons (e.g., “New UUID”, “Formatter”)
-  - Main content area for the current module
-- Ensure full responsiveness:
-  - Collapsible sidebar on mobile
-  - Adaptive layout for smaller screens
+Component Spacing: Use space-y-4 for vertical elements within a component (e.g., labels, inputs, descriptions).
 
-### Step 4: Typography Library Module
+3. Technology Stack
+Framework: Next.js (latest stable, App Router)
 
-- Implement a page that:
-  - Lists curated font stacks and pairs
-  - Previews:
-    - Heading styles
-    - Paragraph/body text
-    - Code blocks
-  - Allows copying:
-    - CSS font-family snippets
-    - Tailwind config snippets
-- Provide a “Docs” subpage explaining:
-  - How to choose fonts
-  - Best practices for developer platforms
+UI / Styling: Tailwind CSS
 
-### Step 5: SVG & Icons Library Module
+Language: TypeScript
 
-- Implement a searchable and filterable grid:
-  - Display SVG icons and illustrations
-  - Preview each SVG on dark background (`#0d0d0d`) and white
-- Add actions:
-  - Copy SVG markup
-  - Download SVG file
-- Include documentation:
-  - How to optimize SVGs
-  - Best practices for embedding SVG in React/Next.js
+Icons / SVG: lucide-react (a clean, lightweight, and professional icon set).
 
-### Step 6: Colors & Gradients Module
+State Management: React Hooks (useState, useContext).
 
-- Implement sections for:
-  - Color palettes (e.g., neutral, primary, semantic)
-  - Gradient presets
-- Each item should show:
-  - Live preview block
-  - HEX / RGB values
-  - Copy-to-clipboard buttons
-- Add docs explaining:
-  - Color system strategy
-  - Accessibility and contrast
+3.1 Styling Philosophy (NEW)
+To ensure "best clean code" as requested:
 
-### Step 7: UI / Code Snippets Module
+Utility-First: All styling must be implemented using Tailwind CSS utility classes directly in the JSX (e.g., <div className="p-4 bg-zinc-900 rounded-lg">...).
 
-- Provide:
-  - Card components, buttons, sections, hero blocks, etc.
-  - Each with:
-    - On-screen preview
-    - Corresponding code snippet (Tailwind + JSX)
-- Include:
-  - “Copy snippet” button
-- Add docs:
-  - How to structure components
-  - Best practices for layout and responsiveness
+No Custom CSS: Avoid writing custom .css or .scss files for individual components. Global styles (app/globals.css) should only contain base Tailwind directives (@tailwind base;), font definitions, and base body styles.
 
-### Step 8: Data Conversion Tools Module
+No @apply: Do not use @apply in CSS files. The goal is a pure utility-first codebase.
 
-- Implement tools:
-  - JSON formatter/beautifier & validator
-  - Base64 encode/decode
-  - Other converters as needed
-- Each tool should have:
-  - Input area
-  - Output area
-  - Clear error handling
-  - Copy result button
-- Provide doc page:
-  - How each converter works
-  - Edge cases and limitations
+No Inline style={...}: Avoid style={{...}} objects, except for dynamic values that cannot be handled by Tailwind (e.g., CSS variables, animation delays).
 
-### Step 9: Generators Module
+4. Application Structure
+(This section remains the same as your original)
 
-- Implement:
-  - UUID generator
-  - Password generator with configurable options
-  - Token/slug generator
-- Features:
-  - One-click generate
-  - Copy-to-clipboard
-  - Optional “Generate on load” setting
+4.1 High-Level Pages / Sections
+Landing / Home Page
 
-### Step 10: Regex & Text Utilities Module
+Typography Library
 
-- Regex tester:
-  - Input: sample text
-  - Input: regex pattern
-  - Live highlighting of matches
-- Text case converters:
-  - Multiple options with instant conversion
-- Docs:
-  - Common regex patterns for developers
-  - Examples and reference tips
+SVG & Icons Library (Use lucide-react icons)
 
-### Step 11: Documentation Layout
+Colors & Gradients
 
-- Create a **dedicated documentation layout** with:
-  - Left sidebar table of contents
-  - Main content area with:
-    - Headings
-    - Code blocks
-    - Info/warning notes as callouts
-  - Typography optimized for reading
-- Organize docs by:
-  - “Getting Started”
-  - “Design System”
-  - “Modules & Tools”
-  - “Examples & Recipes”
+UI / Code Snippets
 
-### Step 12: UX Details & Enhancements
+Data Conversion Tools
 
-- Add:
-  - Keyboard shortcuts for frequent actions (optional)
-  - Smooth animations and subtle transitions
-  - Persistent theme configuration (if light mode added later)
-- Ensure:
-  - Instant feedback on copy actions (e.g., “Copied” toast)
-  - Accessible focus states for keyboard navigation
+Generators
 
-### Step 13: Performance & SEO
+Regex & Text Utilities
 
-- Implement:
-  - Metadata for all pages
-  - Descriptive titles and descriptions
-  - Proper heading structure
-- Optimize:
-  - Bundle size (tree-shaking, code splitting)
-  - Image and SVG usage
+Docs-Style Knowledge Section
 
----
+(Optional) User Features
 
-## 6. Quality Expectations
+5. Step-by-Step Feature List (Implementation Guide)
+Step 1: Project Setup
+Initialize Next.js App Router, install TypeScript, Tailwind.
 
-- The final web app must:
-  - Feel **polished and premium**, not generic.
-  - Have a **cohesive design system** and **professional documentation layout**.
-  - Use **high-quality fonts** and **clear typography hierarchy**.
-  - Deliver a **smooth, responsive, and accessible user experience**.
-  - Be structured and written like a **production-ready developer tool**.
+Configure tailwind.config.ts with the color palette from 2.1 and fonts from 2.3.
 
----
+Set body class in app/layout.tsx to bg-[#0d0d0d] text-white.
 
-Use this `README.md` as the **exact specification and prompt** to generate or build the Next.js application **DevUtilities**.
+Step 2: Design System & Theme
+Create base components in a components/ui folder (e.g., Button.tsx, Card.tsx, Input.tsx).
+
+Card.tsx: Should be a basic component: (props) => <div className="bg-zinc-900 border border-zinc-800 rounded-lg {props.className}" />. Default padding (p-6) should be applied where it's used, not in the base component itself, for flexibility.
+
+Button.tsx: Implement variants (primary, secondary, ghost) using Tailwind.
+
+Step 3: Navigation & Layout (MODIFIED)
+Implement the shell layout in app/layout.tsx.
+
+Create components/Sidebar.tsx:
+
+Use classes: hidden lg:block fixed top-0 left-0 h-screen w-64 bg-[#111] border-r border-zinc-800 p-6 space-y-6
+
+Add DevUtilities logo/title at the top.
+
+Add nav links (use Next/Link) for all sections (space-y-2 for link items).
+
+Modify app/layout.tsx:
+
+Add the <Sidebar />.
+
+Create the main wrapper: <div className="lg:ml-64">...</div>.
+
+Create components/Topbar.tsx:
+
+Place this inside the lg:ml-64 wrapper.
+
+Use classes: sticky top-0 z-10 h-16 flex items-center justify-between gap-4 bg-[#0d0d0d]/80 backdrop-blur-sm border-b border-zinc-800 px-6 lg:px-10
+
+Add a Mobile Menu Button (lg:hidden) to toggle the sidebar.
+
+Add a global search bar.
+
+Page Content:
+
+All page content (in app/page.tsx, app/typography/page.tsx, etc.) will render inside a <main> tag.
+
+Apply default content padding: <main className="p-6 lg:p-10">
+
+Step 4-10: Module Implementation
+(Implement these steps as defined in your original prompt. Remember to use the styling rules from 3.1 and spacing rules from 2.4.)
+
+Example for any tool page (e.g., app/generators/uuid/page.tsx):
+
+JavaScript
+
+export default function UuidPage() {
+  return (
+    <div className="space-y-8">
+      {/* Page Header */}
+      <div className="space-y-2">
+        <h1 className="text-3xl font-bold">UUID Generator</h1>
+        <p className="text-zinc-400">Generate universally unique identifiers.</p>
+      </div>
+
+      {/* Tool Card */}
+      <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 space-y-4">
+        <h2 className="text-xl font-semibold">Your UUID</h2>
+        <Input readOnly value={"..."} className="font-mono" />
+        <div className="flex gap-4">
+          <Button>Generate New</Button>
+          <Button variant="secondary">Copy to Clipboard</Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+Step 11: Documentation Layout
+Create a layout for docs (e.g., app/docs/[[...slug]]/page.tsx).
+
+This layout should include a Right-Side Table of Contents (e.g., fixed top-16 right-0 h-screen w-56 p-6).
+
+Step 12: UX Details & Enhancements
+Add sonner or react-hot-toast for "Copied!" feedback.
+
+Ensure all interactive elements (Button, Input, links) have accessible focus states (e.g., focus-visible:ring-2 focus-visible:ring-blue-500 outline-none).
+
+Step 13: Performance & SEO
+Use next/font for Inter and JetBrains Mono.
+
+Implement generateMetadata for all pages with descriptive titles.
+
+6. Quality Expectations
+The final web app must:
+
+Feel polished and premium.
+
+Have a cohesive design system and professional documentation layout.
+
+Use high-quality fonts and clear typography hierarchy.
+
+Deliver a smooth, responsive, and accessible user experience.
+
+Be structured and written like a production-ready developer tool with clean, utility-first Tailwind code.
