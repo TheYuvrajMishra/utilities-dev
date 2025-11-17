@@ -503,8 +503,8 @@ export default function TypographyPage() {
                 </h3>
                 <div className="relative bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-800 p-12 rounded-xl overflow-hidden border border-zinc-800">
                   {/* Decorative elements */}
-                  <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-                  <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10"></div>
+                  <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
                   
                   <div className="relative z-10 max-w-3xl space-y-6">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-sm text-primary">
@@ -692,8 +692,8 @@ export default function TypographyPage() {
                 </h3>
                 <div className="grid gap-6 md:grid-cols-3">
                   <div className="group relative bg-gradient-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
-                    <div className="relative z-10 space-y-4">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="relative space-y-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -714,8 +714,8 @@ export default function TypographyPage() {
                   </div>
 
                   <div className="group relative bg-gradient-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
-                    <div className="relative z-10 space-y-4">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="relative space-y-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -736,8 +736,8 @@ export default function TypographyPage() {
                   </div>
 
                   <div className="group relative bg-gradient-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
-                    <div className="relative z-10 space-y-4">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="relative space-y-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />

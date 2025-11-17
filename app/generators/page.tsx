@@ -304,7 +304,7 @@ function RandomColorGenerator() {
       </p>
 
       <div
-        className="h-48 rounded-lg cursor-pointer hover:scale-105 transition-transform shadow-xl"
+        className="h-48 rounded-lg cursor-pointer  transition-transform shadow-xl"
         style={{ backgroundColor: color }}
         onClick={generateColor}
       />
