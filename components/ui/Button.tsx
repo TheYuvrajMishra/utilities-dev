@@ -17,10 +17,10 @@ export function Button({
   const baseStyles = 'inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none';
   
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary-hover active:scale-[0.98]',
+    primary: 'bg-white text-black hover:bg-white/90 active:scale-[0.98]',
     secondary: 'bg-zinc-800 text-white hover:bg-zinc-700 active:scale-[0.98]',
     ghost: 'bg-transparent text-muted hover:bg-zinc-900 hover:text-foreground',
-    outline: 'border border-border bg-transparent text-foreground hover:bg-zinc-900',
+    outline: 'border border-border bg-transparent text-foreground hover:bg-white/5 hover:border-white/20',
   };
   
   const sizes = {
