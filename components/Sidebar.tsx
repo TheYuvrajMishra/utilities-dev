@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
@@ -13,21 +13,7 @@ import {
   FileJson, 
   Sparkles, 
   Regex,
-  X,
-  ChevronDown,
-  Hash,
-  Clock,
-  Diff,
-  Braces,
-  Layout,
-  GitBranch,
-  Globe,
-  QrCode,
-  FileCode2,
-  Calculator,
-  Keyboard,
-  Tag,
-  Wand2
+  X
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -35,98 +21,19 @@ interface SidebarProps {
   onClose: () => void;
 }
 
-interface NavigationCategory {
-  category: string;
-  items: Array<{
-    name: string;
-    href: string;
-    icon: any;
-  }>;
-}
-
-const navigation: NavigationCategory[] = [
-  {
-    category: 'Overview',
-    items: [
-      { name: 'Home', href: '/', icon: Home },
-    ],
-  },
-  {
-    category: 'Text & String',
-    items: [
-      { name: 'Text Tools', href: '/text-tools', icon: Type },
-      { name: 'Regex Tester', href: '/regex', icon: Regex },
-      { name: 'String Encoders', href: '/encoders', icon: Code },
-      { name: 'Markdown Editor', href: '/markdown', icon: FileCode2 },
-      { name: 'Diff Checker', href: '/diff', icon: Diff },
-    ],
-  },
-  {
-    category: 'Data & Format',
-    items: [
-      { name: 'JSON Tools', href: '/json-tools', icon: Braces },
-      { name: 'Code Formatters', href: '/formatters', icon: FileJson },
-      { name: 'Data Tools', href: '/data-tools', icon: FileJson },
-      { name: 'SQL Tools', href: '/sql-tools', icon: FileJson },
-    ],
-  },
-  {
-    category: 'Generators',
-    items: [
-      { name: 'Generators', href: '/generators', icon: Sparkles },
-      { name: 'Hash & Crypto', href: '/hash', icon: Hash },
-      { name: 'QR Codes', href: '/qr-code', icon: QrCode },
-      { name: 'Lorem Ipsum', href: '/lorem', icon: Wand2 },
-      { name: 'Meta Tags', href: '/meta-tags', icon: Tag },
-    ],
-  },
-  {
-    category: 'Design & UI',
-    items: [
-      { name: 'Colors', href: '/colors', icon: Palette },
-      { name: 'CSS Tools', href: '/css-tools', icon: Layout },
-      { name: 'Typography', href: '/typography', icon: Type },
-      { name: 'Icons & SVG', href: '/icons', icon: Image },
-      { name: 'Image Tools', href: '/image-tools', icon: Image },
-    ],
-  },
-  {
-    category: 'Development',
-    items: [
-      { name: 'Code Snippets', href: '/snippets', icon: Code },
-      { name: 'Git Tools', href: '/git-tools', icon: GitBranch },
-      { name: 'API Tester', href: '/api-tester', icon: Globe },
-      { name: 'Unit Converter', href: '/converter', icon: Calculator },
-    ],
-  },
-  {
-    category: 'Utilities',
-    items: [
-      { name: 'Time & Date', href: '/time-tools', icon: Clock },
-      { name: 'Shortcuts', href: '/shortcuts', icon: Keyboard },
-    ],
-  },
+const navigation = [
+  { name: 'Home', href: '/', icon: Home },
+  { name: 'Typography', href: '/typography', icon: Type },
+  { name: 'Icons & SVG', href: '/icons', icon: Image },
+  { name: 'Colors & Gradients', href: '/colors', icon: Palette },
+  { name: 'Code Snippets', href: '/snippets', icon: Code },
+  { name: 'Data Tools', href: '/data-tools', icon: FileJson },
+  { name: 'Generators', href: '/generators', icon: Sparkles },
+  { name: 'Text & Regex', href: '/text-tools', icon: Regex },
 ];
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
-  const [expandedCategories, setExpandedCategories] = useState<string[]>([
-    'Overview',
-    'Text & String',
-    'Data & Format',
-    'Generators',
-    'Design & UI',
-    'Development',
-    'Utilities',
-  ]);
-
-  const toggleCategory = (category: string) => {
-    setExpandedCategories((prev) =>
-      prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category]
-    );
-  };
 
   return (
     <>
@@ -151,7 +58,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           {/* Logo/Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-linear-to-br from-primary to-blue-700 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-blue-700 rounded-lg flex items-center justify-center">
                 <Code className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col">
@@ -168,51 +75,28 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 p-4 space-y-4 overflow-y-auto">
-            {navigation.map((section) => (
-              <div key={section.category} className="space-y-1">
-                {/* Category Header */}
-                <button
-                  onClick={() => toggleCategory(section.category)}
-                  className="flex items-center justify-between w-full px-3 py-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider hover:text-zinc-300 transition-colors"
+          <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href;
+              const Icon = item.icon;
+              
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={onClose}
+                  className={clsx(
+                    'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200',
+                    isActive
+                      ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                      : 'text-muted hover:text-foreground hover:bg-zinc-900'
+                  )}
                 >
-                  <span>{section.category}</span>
-                  <ChevronDown
-                    className={clsx(
-                      'w-4 h-4 transition-transform duration-200',
-                      expandedCategories.includes(section.category) ? 'rotate-0' : '-rotate-90'
-                    )}
-                  />
-                </button>
-
-                {/* Category Items */}
-                {expandedCategories.includes(section.category) && (
-                  <div className="space-y-1">
-                    {section.items.map((item) => {
-                      const isActive = pathname === item.href;
-                      const Icon = item.icon;
-
-                      return (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          onClick={onClose}
-                          className={clsx(
-                            'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200',
-                            isActive
-                              ? 'bg-primary text-black shadow-lg shadow-primary/20'
-                              : 'text-muted hover:text-foreground hover:bg-zinc-900'
-                          )}
-                        >
-                          <Icon className="w-4 h-4" />
-                          {item.name}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            ))}
+                  <Icon className="w-5 h-5" />
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Footer */}
