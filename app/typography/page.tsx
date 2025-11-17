@@ -935,7 +935,7 @@ export default function TypographyPage() {
                     variant={currentPage === page ? 'primary' : 'outline'}
                     size="sm"
                     onClick={() => setCurrentPage(page)}
-                    className="min-w-[40px]"
+                    className="min-w-10"
                   >
                     {page}
                   </Button>
@@ -990,7 +990,7 @@ export default function TypographyPage() {
                 <h3 className="text-sm font-semibold text-muted uppercase tracking-wider">
                   Hero Section
                 </h3>
-                <div className="relative bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-800 p-12 rounded-xl overflow-hidden border border-zinc-800">
+                <div className="relative bg-linear-to-br from-zinc-900 via-zinc-900 to-zinc-800 p-12 rounded-xl overflow-hidden border border-zinc-800">
                   {/* Decorative elements */}
                   <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -1040,7 +1040,7 @@ export default function TypographyPage() {
                 </h3>
                 <div className="bg-zinc-900 p-8 rounded-xl border border-zinc-800 space-y-8">
                   <div className="space-y-2 pb-6 border-b border-zinc-800">
-                    <h1 className="text-5xl font-bold bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
+                    <h1 className="text-5xl font-bold bg-linear-to-r from-white to-zinc-400 bg-clip-text text-transparent">
                       Heading 1 - Display Large
                     </h1>
                     <p className="text-sm text-zinc-500">text-5xl · font-bold</p>
@@ -1103,7 +1103,7 @@ export default function TypographyPage() {
                       </h2>
                       <div className="flex items-center gap-4 text-sm">
                         <div className="flex items-center gap-2">
-                          <div className="w-10 h-10 bg-gradient-to-br from-primary to-blue-600 rounded-full"></div>
+                          <div className="w-10 h-10 bg-linear-to-br from-primary to-blue-600 rounded-full"></div>
                           <div>
                             <p className="font-medium">Sarah Johnson</p>
                             <p className="text-zinc-500">Design Lead</p>
@@ -1180,8 +1180,8 @@ export default function TypographyPage() {
                   Card Components
                 </h3>
                 <div className="grid gap-6 md:grid-cols-3">
-                  <div className="group relative bg-gradient-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="group relative bg-linear-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="relative space-y-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1202,8 +1202,8 @@ export default function TypographyPage() {
                     </div>
                   </div>
 
-                  <div className="group relative bg-gradient-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="group relative bg-linear-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="relative space-y-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1224,8 +1224,8 @@ export default function TypographyPage() {
                     </div>
                   </div>
 
-                  <div className="group relative bg-gradient-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="group relative bg-linear-to-br from-zinc-900 to-zinc-900/50 p-8 rounded-xl border border-zinc-800 hover:border-primary/50 transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="relative space-y-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1314,7 +1314,7 @@ export default function TypographyPage() {
                     </div>
                   </div>
 
-                  <div className="relative bg-gradient-to-br from-primary/10 to-blue-500/5 p-8 rounded-xl border-2 border-primary">
+                  <div className="relative bg-linear-to-br from-primary/10 to-blue-500/5 p-8 rounded-xl border-2 border-primary">
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-semibold rounded-full">
                       Most Popular
                     </div>

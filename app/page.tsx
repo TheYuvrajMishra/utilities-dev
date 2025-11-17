@@ -32,7 +32,7 @@ const features = [
     description: 'Professional font pairings, showcase, and live preview system',
     icon: Type,
     href: '/typography',
-    gradient: 'from-blue-500 to-cyan-500',
+    linear: 'from-blue-500 to-cyan-500',
     stats: '70+ Fonts',
     badge: 'Popular',
   },
@@ -41,16 +41,16 @@ const features = [
     description: 'Browse 1000+ professional icons with instant copy functionality',
     icon: Image,
     href: '/icons',
-    gradient: 'from-purple-500 to-pink-500',
+    linear: 'from-purple-500 to-pink-500',
     stats: '2,800+ Icons',
     badge: 'Updated',
   },
   {
-    title: 'Colors & Gradients',
-    description: 'Generate beautiful color palettes and CSS gradients',
+    title: 'Colors & linears',
+    description: 'Generate beautiful color palettes and CSS linears',
     icon: Palette,
     href: '/colors',
-    gradient: 'from-orange-500 to-red-500',
+    linear: 'from-orange-500 to-red-500',
     stats: '50+ Presets',
     badge: 'New',
   },
@@ -59,7 +59,7 @@ const features = [
     description: 'Ready-to-use code snippets for common development patterns',
     icon: Code,
     href: '/snippets',
-    gradient: 'from-green-500 to-emerald-500',
+    linear: 'from-green-500 to-emerald-500',
     stats: '100+ Snippets',
     badge: 'Essential',
   },
@@ -68,7 +68,7 @@ const features = [
     description: 'JSON formatter, Base64 encoder/decoder, and more',
     icon: FileJson,
     href: '/data-tools',
-    gradient: 'from-yellow-500 to-amber-500',
+    linear: 'from-yellow-500 to-amber-500',
     stats: 'Multi-Tool',
     badge: 'Pro',
   },
@@ -77,7 +77,7 @@ const features = [
     description: 'UUID, Lorem Ipsum, passwords, and custom generators',
     icon: Sparkles,
     href: '/generators',
-    gradient: 'from-indigo-500 to-blue-500',
+    linear: 'from-indigo-500 to-blue-500',
     stats: '10+ Tools',
     badge: 'Hot',
   },
@@ -86,7 +86,7 @@ const features = [
     description: 'Text manipulation tools and regex tester with explanations',
     icon: Regex,
     href: '/text-tools',
-    gradient: 'from-pink-500 to-rose-500',
+    linear: 'from-pink-500 to-rose-500',
     stats: 'Smart AI',
     badge: 'Beta',
   },
@@ -130,18 +130,18 @@ export default function Home() {
         
         <div className="relative space-y-10 text-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-full text-sm font-medium backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-linear-to-r from-blue-500/10 to-purple-500/10 border border-white/10 rounded-full text-sm font-medium backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-blue-400" />
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Professional Developer Utilities
               </span>
             </div>
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight">
-              <span className="bg-gradient-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
                 Everything You Need
               </span>
               <br />
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 In One Place
               </span>
             </h1>
@@ -188,21 +188,21 @@ export default function Home() {
               >
                 <Link href={feature.href}>
                   <div className="group relative">
-                    {/* Animated gradient border */}
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-500 group-hover:blur-md" />
+                    {/* Animated linear border */}
+                    <div className="absolute -inset-0.5 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-500 group-hover:blur-md" />
                     
-                    <Card className="relative p-8 h-full border-white/10 hover:border-white/20 transition-all duration-500 group cursor-pointer overflow-hidden bg-[#0d0d0d]">
-                      {/* Background animated gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    <Card className="relative p-8 h-full border-white/10 hover:border-white/20 transition-all duration-500 group cursor-pointer overflow-hidden bg-background">
+                      {/* Background animated linear */}
+                      <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-all duration-500" />
                       
                       {/* Shine effect */}
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <div className="absolute top-0 -left-full h-full w-1/2 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 group-hover:left-full transition-all duration-700" />
+                        <div className="absolute top-0 -left-full h-full w-1/2 bg-linear-to-r from-transparent via-white/5 to-transparent skew-x-12 group-hover:left-full transition-all duration-700" />
                       </div>
 
                       {/* Badge */}
                       <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-white/10 rounded-full">
+                        <span className="px-2 py-1 text-xs font-semibold bg-linear-to-r from-blue-500/20 to-purple-500/20 border border-white/10 rounded-full">
                           {feature.badge}
                         </span>
                       </div>
@@ -210,8 +210,8 @@ export default function Home() {
                       <div className="relative space-y-6">
                         {/* Icon with animated background */}
                         <div className="relative">
-                          <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500`} />
-                          <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-2xl`}>
+                          <div className={`absolute inset-0 bg-linear-to-br ${feature.linear} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500`} />
+                          <div className={`relative w-16 h-16 rounded-2xl bg-linear-to-br ${feature.linear} flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-2xl`}>
                             <Icon className="w-8 h-8 text-white" />
                           </div>
                         </div>
@@ -269,8 +269,8 @@ export default function Home() {
                   
                   <div className="relative space-y-5">
                     <div className="relative inline-block">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                      <div className="relative w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/10">
+                      <div className="absolute inset-0 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                      <div className="relative w-20 h-20 mx-auto rounded-2xl bg-linear-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/10">
                         <Icon className="w-10 h-10 text-blue-400" />
                       </div>
                     </div>
@@ -289,8 +289,8 @@ export default function Home() {
       {/* CTA Section */}
       <section className="relative">
         <Card className="p-16 text-center overflow-hidden border-white/10">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#0d0d0d_100%)]" />
+          <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
+          <div className="absolute inset-0 bg-[radial-linear(circle_at_center,transparent_0%,#0d0d0d_100%)]" />
           
           <div className="relative space-y-8">
             <div className="space-y-4">
@@ -329,7 +329,7 @@ export default function Home() {
             {/* Brand Column */}
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-purple-500 flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-lg font-bold">DevUtilities</span>
@@ -382,7 +382,7 @@ export default function Home() {
                 <li>
                   <Link href="/colors" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                     <Palette className="w-4 h-4" />
-                    Colors & Gradients
+                    Colors & linears
                   </Link>
                 </li>
                 <li>
