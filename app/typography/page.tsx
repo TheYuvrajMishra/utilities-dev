@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -99,6 +99,87 @@ const fonts = [
     googleFonts: 'https://fonts.google.com/specimen/DM+Sans',
     weights: [400, 500, 700],
   },
+  {
+    name: 'Plus Jakarta Sans',
+    category: 'Sans-serif',
+    description: 'A modern geometric sans-serif with excellent legibility',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Plus Jakarta Sans', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Plus+Jakarta+Sans',
+    weights: [200, 300, 400, 500, 600, 700, 800],
+  },
+  {
+    name: 'Space Grotesk',
+    category: 'Sans-serif',
+    description: 'A modern, proportional variant of Space Mono',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Space Grotesk', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Space+Grotesk',
+    weights: [300, 400, 500, 600, 700],
+  },
+  {
+    name: 'Manrope',
+    category: 'Sans-serif',
+    description: 'An open-source modern sans-serif font family',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Manrope', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Manrope',
+    weights: [200, 300, 400, 500, 600, 700, 800],
+  },
+  {
+    name: 'Outfit',
+    category: 'Sans-serif',
+    description: 'A clean, geometric sans-serif with rounded terminals',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Outfit', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Outfit',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Sora',
+    category: 'Sans-serif',
+    description: 'A contemporary sans-serif with humanist influences',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Sora', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Sora',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800],
+  },
+  {
+    name: 'Archivo',
+    category: 'Sans-serif',
+    description: 'A grotesque sans-serif family for headlines and text',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Archivo', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Archivo',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Red Hat Display',
+    category: 'Sans-serif',
+    description: 'A modern sans-serif designed for optimal on-screen readability',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Red Hat Display', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Red+Hat+Display',
+    weights: [300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Satoshi',
+    category: 'Sans-serif',
+    description: 'A contemporary geometric sans-serif with excellent versatility',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Satoshi', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Satoshi',
+    weights: [300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Lexend',
+    category: 'Sans-serif',
+    description: 'Designed to reduce visual stress and improve reading efficiency',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Lexend', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Lexend',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  },
   
   // Serif fonts
   {
@@ -155,6 +236,87 @@ const fonts = [
     googleFonts: 'https://fonts.google.com/specimen/Source+Serif+Pro',
     weights: [200, 300, 400, 600, 700, 900],
   },
+  {
+    name: 'Spectral',
+    category: 'Serif',
+    description: 'A serif typeface for long-form text on screens',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Spectral', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Spectral',
+    weights: [200, 300, 400, 500, 600, 700, 800],
+  },
+  {
+    name: 'Vollkorn',
+    category: 'Serif',
+    description: 'A classical antiqua with a modern, fresh character',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Vollkorn', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Vollkorn',
+    weights: [400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Libre Baskerville',
+    category: 'Serif',
+    description: 'A web-optimized version of the classic Baskerville',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Libre Baskerville', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Libre+Baskerville',
+    weights: [400, 700],
+  },
+  {
+    name: 'Cormorant',
+    category: 'Serif',
+    description: 'A display font family inspired by classic French type',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Cormorant', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Cormorant',
+    weights: [300, 400, 500, 600, 700],
+  },
+  {
+    name: 'Newsreader',
+    category: 'Serif',
+    description: 'A contemporary serif for digital publishing',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Newsreader', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Newsreader',
+    weights: [200, 300, 400, 500, 600, 700, 800],
+  },
+  {
+    name: 'Fraunces',
+    category: 'Serif',
+    description: 'A display typeface with an expansive range of styles',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Fraunces', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Fraunces',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Bitter',
+    category: 'Serif',
+    description: 'A contemporary slab serif typeface for text',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Bitter', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Bitter',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Literata',
+    category: 'Serif',
+    description: 'Designed specifically for digital reading',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Literata', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Literata',
+    weights: [200, 300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Cardo',
+    category: 'Serif',
+    description: 'A large unicode font specifically designed for classicists',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Cardo', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Cardo',
+    weights: [400, 700],
+  },
   
   // Monospace fonts
   {
@@ -202,6 +364,60 @@ const fonts = [
     googleFonts: 'https://fonts.google.com/specimen/IBM+Plex+Mono',
     weights: [100, 200, 300, 400, 500, 600, 700],
   },
+  {
+    name: 'Inconsolata',
+    category: 'Monospace',
+    description: 'A monospace font designed for printed code listings',
+    preview: 'const code = "Hello World";',
+    css: "font-family: 'Inconsolata', monospace;",
+    googleFonts: 'https://fonts.google.com/specimen/Inconsolata',
+    weights: [200, 300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Space Mono',
+    category: 'Monospace',
+    description: 'A geometric monospace with distinctive letterforms',
+    preview: 'const code = "Hello World";',
+    css: "font-family: 'Space Mono', monospace;",
+    googleFonts: 'https://fonts.google.com/specimen/Space+Mono',
+    weights: [400, 700],
+  },
+  {
+    name: 'Overpass Mono',
+    category: 'Monospace',
+    description: 'An open source monospace inspired by Highway Gothic',
+    preview: 'const code = "Hello World";',
+    css: "font-family: 'Overpass Mono', monospace;",
+    googleFonts: 'https://fonts.google.com/specimen/Overpass+Mono',
+    weights: [300, 400, 500, 600, 700],
+  },
+  {
+    name: 'Courier Prime',
+    category: 'Monospace',
+    description: 'A monospaced font designed for screenplays',
+    preview: 'const code = "Hello World";',
+    css: "font-family: 'Courier Prime', monospace;",
+    googleFonts: 'https://fonts.google.com/specimen/Courier+Prime',
+    weights: [400, 700],
+  },
+  {
+    name: 'Anonymous Pro',
+    category: 'Monospace',
+    description: 'A family of fixed-width fonts designed for coders',
+    preview: 'const code = "Hello World";',
+    css: "font-family: 'Anonymous Pro', monospace;",
+    googleFonts: 'https://fonts.google.com/specimen/Anonymous+Pro',
+    weights: [400, 700],
+  },
+  {
+    name: 'Red Hat Mono',
+    category: 'Monospace',
+    description: 'A monospaced companion to Red Hat Display',
+    preview: 'const code = "Hello World";',
+    css: "font-family: 'Red Hat Mono', monospace;",
+    googleFonts: 'https://fonts.google.com/specimen/Red+Hat+Mono',
+    weights: [300, 400, 500, 600, 700],
+  },
   
   // Display fonts
   {
@@ -231,6 +447,87 @@ const fonts = [
     googleFonts: 'https://fonts.google.com/specimen/Archivo+Black',
     weights: [400],
   },
+  {
+    name: 'Oswald',
+    category: 'Display',
+    description: 'A reworking of the classic gothic typeface style',
+    preview: 'The Quick Brown Fox Jumps Over The Lazy Dog',
+    css: "font-family: 'Oswald', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Oswald',
+    weights: [200, 300, 400, 500, 600, 700],
+  },
+  {
+    name: 'Anton',
+    category: 'Display',
+    description: 'A bold, attention-grabbing sans-serif display font',
+    preview: 'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG',
+    css: "font-family: 'Anton', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Anton',
+    weights: [400],
+  },
+  {
+    name: 'Bowlby One',
+    category: 'Display',
+    description: 'A bold display font with rounded terminals',
+    preview: 'The Quick Brown Fox Jumps Over The Lazy Dog',
+    css: "font-family: 'Bowlby One', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Bowlby+One',
+    weights: [400],
+  },
+  {
+    name: 'Rubik',
+    category: 'Display',
+    description: 'A sans-serif with slightly rounded corners',
+    preview: 'The Quick Brown Fox Jumps Over The Lazy Dog',
+    css: "font-family: 'Rubik', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Rubik',
+    weights: [300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Staatliches',
+    category: 'Display',
+    description: 'A bold, uppercase display typeface',
+    preview: 'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG',
+    css: "font-family: 'Staatliches', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Staatliches',
+    weights: [400],
+  },
+  {
+    name: 'Lilita One',
+    category: 'Display',
+    description: 'A bold display font with a unique personality',
+    preview: 'The Quick Brown Fox Jumps Over The Lazy Dog',
+    css: "font-family: 'Lilita One', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Lilita+One',
+    weights: [400],
+  },
+  {
+    name: 'Barlow Condensed',
+    category: 'Display',
+    description: 'A condensed version of the Barlow superfamily',
+    preview: 'The Quick Brown Fox Jumps Over The Lazy Dog',
+    css: "font-family: 'Barlow Condensed', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Barlow+Condensed',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  },
+  {
+    name: 'Alfa Slab One',
+    category: 'Display',
+    description: 'A contemporary take on the 19th-century slab serif',
+    preview: 'The Quick Brown Fox Jumps Over The Lazy Dog',
+    css: "font-family: 'Alfa Slab One', serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Alfa+Slab+One',
+    weights: [400],
+  },
+  {
+    name: 'Fjalla One',
+    category: 'Display',
+    description: 'A medium contrast display sans-serif',
+    preview: 'The Quick Brown Fox Jumps Over The Lazy Dog',
+    css: "font-family: 'Fjalla One', sans-serif;",
+    googleFonts: 'https://fonts.google.com/specimen/Fjalla+One',
+    weights: [400],
+  },
   
   // Handwriting fonts
   {
@@ -258,6 +555,69 @@ const fonts = [
     preview: 'The quick brown fox jumps over the lazy dog',
     css: "font-family: 'Pacifico', cursive;",
     googleFonts: 'https://fonts.google.com/specimen/Pacifico',
+    weights: [400],
+  },
+  {
+    name: 'Satisfy',
+    category: 'Handwriting',
+    description: 'A flowing, handwritten script font',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Satisfy', cursive;",
+    googleFonts: 'https://fonts.google.com/specimen/Satisfy',
+    weights: [400],
+  },
+  {
+    name: 'Kalam',
+    category: 'Handwriting',
+    description: 'A handwriting font with an informal feel',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Kalam', cursive;",
+    googleFonts: 'https://fonts.google.com/specimen/Kalam',
+    weights: [300, 400, 700],
+  },
+  {
+    name: 'Permanent Marker',
+    category: 'Handwriting',
+    description: 'A font that looks like a marker pen',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Permanent Marker', cursive;",
+    googleFonts: 'https://fonts.google.com/specimen/Permanent+Marker',
+    weights: [400],
+  },
+  {
+    name: 'Shadows Into Light',
+    category: 'Handwriting',
+    description: 'A friendly handwritten font',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Shadows Into Light', cursive;",
+    googleFonts: 'https://fonts.google.com/specimen/Shadows+Into+Light',
+    weights: [400],
+  },
+  {
+    name: 'Architects Daughter',
+    category: 'Handwriting',
+    description: 'A handwriting font based on the architect\'s lettering',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Architects Daughter', cursive;",
+    googleFonts: 'https://fonts.google.com/specimen/Architects+Daughter',
+    weights: [400],
+  },
+  {
+    name: 'Indie Flower',
+    category: 'Handwriting',
+    description: 'A playful handwritten font',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Indie Flower', cursive;",
+    googleFonts: 'https://fonts.google.com/specimen/Indie+Flower',
+    weights: [400],
+  },
+  {
+    name: 'Cookie',
+    category: 'Handwriting',
+    description: 'A brush script with elegant curves',
+    preview: 'The quick brown fox jumps over the lazy dog',
+    css: "font-family: 'Cookie', cursive;",
+    googleFonts: 'https://fonts.google.com/specimen/Cookie',
     weights: [400],
   },
 ];
@@ -295,6 +655,9 @@ export default function TypographyPage() {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [selectedFont, setSelectedFont] = useState<typeof fonts[0] | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loadedFonts, setLoadedFonts] = useState<Set<string>>(new Set());
+  const fontsPerPage = 12;
 
   const categories = ['All', ...Array.from(new Set(fonts.map((f) => f.category)))];
 
@@ -306,6 +669,59 @@ export default function TypographyPage() {
     const matchesCategory = selectedCategory === 'All' || font.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredFonts.length / fontsPerPage);
+  const startIndex = (currentPage - 1) * fontsPerPage;
+  const endIndex = startIndex + fontsPerPage;
+  const currentFonts = filteredFonts.slice(startIndex, endIndex);
+
+  // Load Google Fonts dynamically for current page
+  useEffect(() => {
+    const fontsToLoad = currentFonts.filter((font) => !loadedFonts.has(font.name));
+    
+    if (fontsToLoad.length > 0) {
+      const fontFamilies = fontsToLoad.map((font) => {
+        const weights = font.weights.join(';');
+        return `family=${font.name.replace(/ /g, '+')}:wght@${weights}`;
+      }).join('&');
+
+      const link = document.createElement('link');
+      link.href = `https://fonts.googleapis.com/css2?${fontFamilies}&display=swap`;
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+
+      setLoadedFonts((prev) => {
+        const newSet = new Set(prev);
+        fontsToLoad.forEach((font) => newSet.add(font.name));
+        return newSet;
+      });
+    }
+  }, [currentFonts, loadedFonts]);
+
+  // Load selected font for modal
+  useEffect(() => {
+    if (selectedFont && !loadedFonts.has(selectedFont.name)) {
+      const weights = selectedFont.weights.join(';');
+      const link = document.createElement('link');
+      link.href = `https://fonts.googleapis.com/css2?family=${selectedFont.name.replace(/ /g, '+')}:wght@${weights}&display=swap`;
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+
+      setLoadedFonts((prev) => new Set(prev).add(selectedFont.name));
+    }
+  }, [selectedFont, loadedFonts]);
+
+  // Reset to page 1 when filters change
+  const handleSearch = (value: string) => {
+    setSearchQuery(value);
+    setCurrentPage(1);
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
 
   const copyToClipboard = (text: string, index: number) => {
     navigator.clipboard.writeText(text);
@@ -330,7 +746,7 @@ export default function TypographyPage() {
             <Input
               placeholder="Search fonts..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => handleSearch(e.target.value)}
             />
           </div>
           <div className="flex-1">
@@ -349,7 +765,7 @@ export default function TypographyPage() {
               key={category}
               variant={selectedCategory === category ? 'primary' : 'ghost'}
               size="sm"
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               className="whitespace-nowrap"
             >
               {category}
@@ -389,12 +805,19 @@ export default function TypographyPage() {
 
       {/* Font Cards */}
       <section className="space-y-4">
-        <h2 className="text-2xl font-semibold border-b border-border pb-2">
-          All Fonts ({filteredFonts.length})
-        </h2>
+        <div className="flex items-center justify-between border-b border-border pb-2">
+          <h2 className="text-2xl font-semibold">
+            All Fonts (67)
+          </h2>
+          {totalPages > 1 && (
+            <p className="text-sm text-muted">
+              Page {currentPage} of {totalPages}
+            </p>
+          )}
+        </div>
         
         <div className="space-y-4">
-          {filteredFonts.map((font, index) => (
+          {currentFonts.map((font, index) => (
             <Card key={font.name} className="p-6">
               <div className="space-y-4">
                 {/* Font Header */}
@@ -466,6 +889,72 @@ export default function TypographyPage() {
         {filteredFonts.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted">No fonts found matching your search.</p>
+          </div>
+        )}
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 pt-8">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              className="gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Previous
+            </Button>
+
+            <div className="flex gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+                // Show first page, last page, current page, and pages around current
+                const showPage =
+                  page === 1 ||
+                  page === totalPages ||
+                  (page >= currentPage - 1 && page <= currentPage + 1);
+
+                const showEllipsisBefore = page === currentPage - 2 && currentPage > 3;
+                const showEllipsisAfter = page === currentPage + 2 && currentPage < totalPages - 2;
+
+                if (showEllipsisBefore || showEllipsisAfter) {
+                  return (
+                    <span key={page} className="px-3 py-2 text-muted">
+                      ...
+                    </span>
+                  );
+                }
+
+                if (!showPage) return null;
+
+                return (
+                  <Button
+                    key={page}
+                    variant={currentPage === page ? 'primary' : 'outline'}
+                    size="sm"
+                    onClick={() => setCurrentPage(page)}
+                    className="min-w-[40px]"
+                  >
+                    {page}
+                  </Button>
+                );
+              })}
+            </div>
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
+              disabled={currentPage === totalPages}
+              className="gap-2"
+            >
+              Next
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Button>
           </div>
         )}
       </section>
