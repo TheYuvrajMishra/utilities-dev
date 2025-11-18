@@ -14,13 +14,13 @@ export function Button({
   children, 
   ...props 
 }: ButtonProps) {
-  const baseStyles = 'cursor-pointer inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden';
+  const baseStyles = 'group relative isolate inline-flex items-center justify-center rounded-2xl font-medium tracking-tight transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 disabled:opacity-40 disabled:pointer-events-none overflow-hidden shadow-[0_1px_0_rgba(255,255,255,0.15)]';
   
   const variants = {
-    primary: 'bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:from-blue-500 hover:to-blue-400 active:scale-[0.98] shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 border border-blue-400/20',
-    secondary: 'bg-gradient-to-r from-zinc-800 to-zinc-700 text-white hover:from-zinc-700 hover:to-zinc-600 active:scale-[0.98] shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 border border-white/5',
-    ghost: 'bg-white/[0.03] backdrop-blur-sm text-white/80 hover:bg-white/[0.08] hover:text-white border border-white/10 hover:border-white/20 shadow-sm hover:shadow-md',
-    outline: 'border border-white/20 bg-white/[0.02] backdrop-blur-sm text-white/90 hover:bg-white/[0.06] hover:border-white/30 shadow-sm hover:shadow-md',
+    primary: 'text-white bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.25),rgba(99,102,241,0.35))] border border-white/15 hover:border-white/30 hover:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.3),rgba(99,102,241,0.45))] shadow-[0_25px_60px_rgba(79,70,229,0.35)]',
+    secondary: 'text-white bg-white/8 border border-white/15 backdrop-blur hover:bg-white/12 hover:border-white/25 shadow-[0_20px_45px_rgba(15,23,42,0.45)]',
+    ghost: 'text-white/75 border border-white/10 bg-transparent hover:bg-white/5 hover:text-white shadow-none',
+    outline: 'text-white border border-white/25 bg-white/3 hover:bg-white/8 hover:border-white/40 shadow-[0_15px_35px_rgba(255,255,255,0.08)]',
   };
   
   const sizes = {
@@ -42,8 +42,11 @@ export function Button({
       {/* Subtle shine effect on hover - pointer-events-none to avoid intercepting clicks */}
       <span
         aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-0 hover:opacity-100 transition-opacity duration-500 bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent)] -translate-x-full hover:translate-x-full"
-        style={{ transform: 'translateX(-100%)', transition: 'transform 0.65s cubic-bezier(.2,.9,.2,1), opacity 0.4s' }}
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 -translate-x-full group-hover:translate-x-full"
+        style={{
+          background: 'linear-gradient(120deg, transparent, rgba(255,255,255,0.18), transparent)',
+          transitionTimingFunction: 'cubic-bezier(.19,1,.22,1)',
+        }}
       />
 
       <span className="relative z-10 flex items-center gap-2">{children}</span>

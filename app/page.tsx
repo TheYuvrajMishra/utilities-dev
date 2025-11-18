@@ -7,77 +7,206 @@ export default function Home() {
   return (
     <>
     <main className="relative overflow-hidden">
-      {/* Noise + Vignette + Texture */}
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.07),transparent_60%)]" />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[url('/noise.png')] opacity-[0.07] mix-blend-overlay" />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.6),transparent_40%,rgba(0,0,0,0.6))]" />
-
       {/* Hero */}
-      <section className="relative px-6 pb-48 max-w-6xl mx-auto">
+      <section className="relative pt px-6 pb-48 max-w-6xl mx-auto">
         {/* Decorative elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
         
-        <div className="relative z-0">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm mb-8 animate-[fadeIn_0.6s_ease-out]">
-            <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-[11px] font-medium tracking-[0.15em] uppercase text-white/60">
-              Developer Workspace
-            </span>
-          </div>
+        <div className="relative z-0 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm mb-8 animate-[fadeIn_0.6s_ease-out]">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-white/55">
+                Signal over noise
+              </span>
+            </div>
 
-          {/* Main Heading */}
-          <h1 className="text-[3.8rem] lg:text-[6rem] xl:text-[5rem] font-[350] leading-[0.95] tracking-tight max-w-5xl mb-8 animate-[fadeIn_0.8s_ease-out_0.1s_both]">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/60">
-              Tools that improve
-            </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white/90 via-white/70 to-white/40">
-              your work, not your
-            </span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">
-              landing page.
-            </span>
-          </h1>
+            {/* Main Heading */}
+            <h1 className="text-[3.6rem] lg:text-[5rem] xl:text-[4.6rem] font-[275] leading-[0.95] tracking-[-0.02em] max-w-4xl mb-8 animate-[fadeIn_0.8s_ease-out_0.1s_both]">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white via-white/85 to-white/60">
+                Utility rails for
+              </span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-slate-50 to-purple-100">
+                professional product teams
+              </span>
+              <span className="block text-white/70 font-[300] tracking-[0.08em] text-base lg:text-lg mt-5 uppercase">
+                Built with thin sans serif rhythm · Tested inside shipping roadmaps
+              </span>
+            </h1>
 
-          {/* Subheading */}
-          <p className="text-[17px] lg:text-[19px] text-white/55 max-w-3xl leading-[1.7] font-light mb-12 animate-[fadeIn_1s_ease-out_0.2s_both]">
-            A focused kit of developer utilities, built for people who hate noisy UI,
-            chaotic generators, and tools that feel like side projects pretending to be products.
-            <span className="block mt-3 text-white/45">
-              Typography systems · Color labs · Text formatters · Data converters · Generators
-            </span>
-          </p>
+            {/* Subheading */}
+            <p className="text-[17px] lg:text-[18px] text-white/70 max-w-3xl leading-[1.7] font-light mb-10 animate-[fadeIn_1s_ease-out_0.2s_both]">
+              Utilities.dev elevates typography, color, data, and text workflows with tangible craft. Slim type ramps, precise spacing, and restrained gradients keep the interface feeling intentional—not auto-generated.
+              <span className="block mt-3 text-white/55">
+                Grid-consistent layouts · Keyboard friendly · Client-side by default
+              </span>
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex gap-4 items-center animate-[fadeIn_1.2s_ease-out_0.3s_both]">
-            <Link href="/typography">
-              <Button size="xl" className="font-medium gap-2.5 px-8">
-                Start Exploring <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 items-center animate-[fadeIn_1.2s_ease-out_0.3s_both]">
+              <Link href="/typography">
+                <Button size="xl" className="font-medium gap-2.5 px-8 tracking-wide">
+                  Launch workspace <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
 
-            <Link href="https://github.com/TheYuvrajMishra/utilities-dev" target="_blank">
-              <Button variant="ghost" size="xl" className="font-medium px-8">
-                View on GitHub
-              </Button>
-            </Link>
-            
-            <div className="hidden md:flex items-center gap-6 ml-4 text-[13px] text-white/30">
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 rounded-full bg-white/30" />
-                <span>100% Free</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 rounded-full bg-white/30" />
-                <span>No Sign-up</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 rounded-full bg-white/30" />
-                <span>Open Source</span>
+              <Link href="https://github.com/TheYuvrajMishra/utilities-dev" target="_blank">
+                <Button variant="ghost" size="xl" className="font-medium px-8 tracking-wide">
+                  View on GitHub
+                </Button>
+              </Link>
+              
+              <div className="flex items-center gap-5 text-[12px] uppercase tracking-[0.3em] text-white/35">
+                <span>Free forever</span>
+                <span>No accounts</span>
+                <span>Open source</span>
               </div>
             </div>
           </div>
+
+          {/* Hero preview card */}
+          <Card className="relative border-white/10 bg-white/[0.015] p-6 md:p-8 overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(120,120,255,0.12),transparent_55%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.04),transparent)]" />
+            <div className="relative space-y-6">
+              <div className="flex items-center justify-between text-[12px] uppercase tracking-[0.35em] text-white/50">
+                <span>Live stack</span>
+                <span className="text-emerald-300">Synced</span>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                  <p className="text-[12px] uppercase tracking-[0.3em] text-white/40">Typography</p>
+                  <p className="mt-2 text-lg text-white">Switzer / Light</p>
+                  <p className="text-[12px] text-white/45">Weights 200–700 · Auto copy CSS</p>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                  <p className="text-[12px] uppercase tracking-[0.3em] text-white/40">Color Lab</p>
+                  <p className="mt-2 text-lg text-white">Contrast 8.9</p>
+                  <p className="text-[12px] text-white/45">AA compliant · Export tokens</p>
+                </div>
+              </div>
+              <pre className="rounded-2xl border border-white/10 bg-black/60 p-5 text-[12.5px] text-emerald-100 font-mono leading-relaxed overflow-auto">
+{`const audit = createAiReview({
+  typography: "Switzer",
+  palette: "Noir Gradient",
+  surface: "Glass" ,
+});
+
+if (audit.variance &lt; 0.2) {
+  deploy();
+}`}
+              </pre>
+              <div className="grid gap-4 text-white/60 text-[13px]">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Compass className="w-4 h-4 text-white/60" />
+                    <span>Workflows aligned</span>
+                  </div>
+                  <span className="text-emerald-300">+24%</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Clipboard memory</span>
+                  <span className="text-white/80">8 entries</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Prompt context</span>
+                  <span className="text-white/80">Typography + Color</span>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* AI Sneak Peek */}
+      <section className="px-6 max-w-6xl mx-auto pb-24">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white/50">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> Live sneak peek
+            </p>
+            <h2 className="mt-5 text-3xl lg:text-[2.8rem] font-[350] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/85 to-white/60">
+              Autonomous workspace that feels invisible
+            </h2>
+            <p className="mt-5 text-white/60 text-[16px] leading-[1.7]">
+              Every tool streams intelligence from the same local context. Switch from typography preview to JSON cleanup and keep the same prompt state, keyboard palette, and clipboard history.
+            </p>
+            <ul className="mt-8 space-y-3 text-white/60 text-[14px]">
+              <li className="flex items-center gap-3">
+                <div className="h-6 w-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center text-[12px] font-semibold">1</div>
+                Single key command opens the AI palette anywhere in the workspace.
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="h-6 w-6 rounded-full bg-sky-400/20 text-sky-200 flex items-center justify-center text-[12px] font-semibold">2</div>
+                Context sticks as you move between typography, data tools, and snippets.
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="h-6 w-6 rounded-full bg-purple-400/20 text-purple-200 flex items-center justify-center text-[12px] font-semibold">3</div>
+                Responses stream with zero backend calls—everything stays client-side.
+              </li>
+            </ul>
+          </div>
+
+          <Card className="relative border-white/10 bg-white/[0.02] p-6 md:p-8 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/5 blur-3xl" />
+            <div className="relative space-y-5">
+              <div className="rounded-2xl border border-white/10 bg-black/40 p-5 shadow-lg">
+                <div className="mb-4 flex items-center gap-2 text-[12px] uppercase tracking-[0.3em] text-white/50">
+                  <div className="flex gap-1">
+                    <span className="h-2 w-2 rounded-full bg-rose-400" />
+                    <span className="h-2 w-2 rounded-full bg-amber-400" />
+                    <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                  </div>
+                  AI Workspace
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                    <p className="text-[13px] uppercase tracking-[0.15em] text-white/40">Typography</p>
+                    <p className="mt-2 text-lg text-white">Switzer · Display</p>
+                    <p className="text-[12px] text-white/50">Weights synced • Preview live</p>
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                    <p className="text-[13px] uppercase tracking-[0.15em] text-white/40">Formatter</p>
+                    <p className="mt-2 text-lg text-white">JSON → Clean</p>
+                    <p className="text-[12px] text-white/50">Auto indentation • Lint safe</p>
+                  </div>
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:col-span-2">
+                    <div className="flex items-center justify-between text-white/60 text-[13px]">
+                      <span>AI Suggestions</span>
+                      <span className="text-emerald-300">Streaming…</span>
+                    </div>
+                    <p className="mt-2 text-white/80 text-[14px] font-light">
+                      “Detected camelCase mismatch. Want me to normalize?”
+                    </p>
+                    <div className="mt-3 flex gap-3 text-[12px] text-white/60">
+                      <span className="rounded-full border border-white/15 px-3 py-1">Fix & Apply</span>
+                      <span className="rounded-full border border-white/15 px-3 py-1">Copy diff</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
+                <p className="text-white/50 text-[13px] uppercase tracking-[0.2em]">Signal</p>
+                <div className="mt-4 grid grid-cols-3 gap-4 text-white">
+                  <div>
+                    <p className="text-2xl font-semibold">128</p>
+                    <p className="text-[12px] text-white/50">Snippets curated</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-semibold">42</p>
+                    <p className="text-[12px] text-white/50">Live prompts</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-semibold">6</p>
+                    <p className="text-[12px] text-white/50">Tool surfaces</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
@@ -85,7 +214,7 @@ export default function Home() {
       <section className="px-6 max-w-6xl mx-auto pb-24">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-5xl font-[350] mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/60">
-            What's Inside
+            What&rsquo;s Inside
           </h2>
           <p className="text-white/45 text-[16px] lg:text-[17px] max-w-2xl mx-auto leading-relaxed font-light">
             Six focused tool categories. No bloat, no filler. Just the essentials, refined.
@@ -240,7 +369,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="text-[11px] text-white/30 uppercase tracking-wider">Sans-Serif</div>
-                  <div className="text-2xl font-light text-white" style={{fontFamily: 'Inter'}}>
+                  <div className="text-2xl font-light text-white" style={{ fontFamily: "Inter" }}>
                     The quick brown fox jumps
                   </div>
                 </div>
@@ -326,6 +455,76 @@ export default function Home() {
         </div>
       </section>
 
+      {/* AI Snippet Preview */}
+      <section className="px-6 max-w-6xl mx-auto pb-32">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white/50">
+              Sneak peek · snippet stream
+            </p>
+            <h2 className="mt-5 text-3xl lg:text-[2.75rem] font-[350] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/85 to-white/60">
+              Ship-ready snippets with AI annotations
+            </h2>
+            <p className="mt-5 text-white/60 text-[15px] leading-[1.75]">
+              Watch the AI co-pilot rewrite your utilities in real time. Each snippet carries runnable examples, accessibility notes, and instant Tailwind suggestions.
+            </p>
+            <div className="mt-8 grid gap-4 text-white/65 text-[14px]">
+              <div className="flex items-center gap-3">
+                <div className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-[0.2em] text-white/60">Streaming</div>
+                <span>Inline diffs show what the AI changed before it commits.</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-[0.2em] text-white/60">Context</div>
+                <span>Prompts inherit typography + color decisions for consistency.</span>
+              </div>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="/snippets">
+                <Button size="lg" className="gap-2.5">
+                  Browse snippets <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="https://github.com/TheYuvrajMishra/utilities-dev" target="_blank" className="text-white/60 text-[14px] hover:text-white/80 transition-colors">
+                Download full library →
+              </Link>
+            </div>
+          </div>
+
+          <Card className="relative border-white/10 bg-black/40 p-0 overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-r from-emerald-500/30 via-blue-500/20 to-purple-500/30" />
+            <div className="relative p-6">
+              <div className="flex items-center gap-2 text-[12px] uppercase tracking-[0.3em] text-white/50 mb-4">
+                <span className="h-2 w-2 rounded-full bg-emerald-400" /> AI snippet · Typography tokens
+              </div>
+              <pre className="rounded-2xl border border-white/10 bg-black/70 p-5 text-[13px] text-emerald-100 font-mono leading-relaxed overflow-auto">
+{`const tokens = generateTypography({
+  font: "Switzer",
+  scale: "majorThird",
+  aiAssist: true,
+  locale: "en",
+});
+
+export const marketingHero = tokens.compose({
+  heading: {
+    weight: 300,
+    gradient: "from-white via-blue-100 to-purple-200",
+  },
+  body: {
+    weight: 400,
+    tracking: "wide",
+  },
+});`}
+              </pre>
+              <div className="mt-4 flex flex-wrap gap-3 text-[12px] text-white/60">
+                <span className="rounded-full border border-white/10 px-3 py-1">⇧ + ⌘ + S · Stream fix</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">Copy tokens</span>
+                <span className="rounded-full border border-white/10 px-3 py-1">Open in editor</span>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* Use Cases Section */}
       <section className="px-6 max-w-6xl mx-auto pb-32">
         <div className="text-center mb-20">
@@ -333,7 +532,7 @@ export default function Home() {
             Built for Real Workflows
           </h2>
           <p className="text-white/45 text-[16px] lg:text-[17px] max-w-2xl mx-auto leading-relaxed font-light">
-            Whether you're prototyping, building design systems, or formatting data—these tools fit naturally into your process.
+            Whether you&rsquo;re prototyping, building design systems, or formatting data—these tools fit naturally into your process.
           </p>
         </div>
 
@@ -444,9 +643,9 @@ export default function Home() {
               </h2>
 
               <p className="text-white/50 max-w-2xl mx-auto md:mx-0 leading-[1.75] text-[16px] lg:text-[17px] mb-5 font-light">
-                This project is not trying to impress Dribbble. It's trying to make
+                This project is not trying to impress Dribbble. It&rsquo;s trying to make
                 developers faster. Every tool here exists because it solves a real problem.
-                No tracking, no subscriptions, no "sign up to unlock features."
+                No tracking, no subscriptions, no &ldquo;sign up to unlock features.&rdquo;
               </p>
 
               <div className="flex items-center justify-center md:justify-start gap-6 text-[13px] text-white/30 mb-4">
