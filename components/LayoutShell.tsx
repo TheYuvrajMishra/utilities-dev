@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Sidebar } from './Sidebar';
 import { Topbar } from './Topbar';
+import { Footer } from './Footer';
 
 interface LayoutShellProps {
   children: React.ReactNode;
@@ -15,12 +16,14 @@ export function LayoutShell({ children }: LayoutShellProps) {
     <>
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       
-      <div className="lg:ml-64">
+      <div className="lg:ml-64 flex flex-col min-h-screen">
         <Topbar onMenuClick={() => setSidebarOpen(true)} />
         
-        <main className="min-h-screen p-6 lg:p-10">
+        <main className="flex-1 p-6 lg:p-10">
           {children}
         </main>
+
+        <Footer />
       </div>
     </>
   );
