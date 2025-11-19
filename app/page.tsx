@@ -15,15 +15,12 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative pt px-6 pb-48 max-w-screen mx-auto">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
         
         <div className="relative z-0 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/4 border border-white/10 backdrop-blur-sm mb-8 animate-[fadeIn_0.6s_ease-out]">
-              <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/50" />
               <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-white/55">
                 Signal over noise
               </span>
@@ -35,7 +32,7 @@ export default function Home() {
                 Utility rails for
               </span>
               <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-100 via-slate-50 to-purple-100">
-                professional product teams
+                professionals 
               </span>
               <span className="block text-white/70 font-light tracking-[0.08em] text-base lg:text-lg mt-5 uppercase">
                 Built with thin sans serif rhythm · Tested inside shipping roadmaps
@@ -129,7 +126,7 @@ if (audit.variance &lt; 0.2) {
       </section>
 
       {/* AI Sneak Peek */}
-      <section className="px-6 max-w-6xl mx-auto pb-24">
+      <section className="px-6 max-w-screen mx-auto pb-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-4 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white/50">
@@ -221,7 +218,7 @@ if (audit.variance &lt; 0.2) {
       </section>
 
       {/* Tool Categories Overview */}
-      <section className="px-6 max-w-6xl mx-auto pb-24">
+      <section className="px-6 max-w-screen mx-auto pb-24">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-5xl font-[350] mb-4 tracking-tight text-transparent bg-clip-text bg-linear-to-br from-white via-white/90 to-white/60">
             What&rsquo;s Inside
@@ -340,7 +337,7 @@ if (audit.variance &lt; 0.2) {
       </section>
 
       {/* Feature Highlights with gradient headings */}
-      <section className="px-6 max-w-6xl mx-auto pb-32">
+      <section className="px-6 max-w-screen mx-auto pb-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           <div>
@@ -406,7 +403,7 @@ if (audit.variance &lt; 0.2) {
       </section>
 
       {/* Color Tools Section */}
-      <section className="px-6 max-w-6xl mx-auto pb-32">
+      <section className="px-6 max-w-screen mx-auto pb-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           <div className="order-2 lg:order-1 relative">
@@ -467,7 +464,7 @@ if (audit.variance &lt; 0.2) {
       </section>
 
       {/* AI Snippet Preview */}
-      <section className="px-6 max-w-6xl mx-auto pb-32">
+      <section className="px-6 max-w-screen mx-auto pb-32">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white/50">
@@ -538,7 +535,7 @@ export const marketingHero = tokens.compose({
       </section>
 
       {/* Use Cases Section */}
-      <section className="px-6 max-w-6xl mx-auto pb-32">
+      <section className="px-6 max-w-screen mx-auto pb-32">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-5xl font-[350] mb-5 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">
             Built for Real Workflows
@@ -590,7 +587,7 @@ export const marketingHero = tokens.compose({
       </section>
 
       {/* Why Choose Section with gradient text */}
-      <section className="px-6 max-w-6xl mx-auto pb-32">
+      <section className="px-6 max-w-screen mx-auto pb-32">
         <div className="text-center mb-20">
           <h2 className="text-3xl lg:text-5xl font-[350] mb-5 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white">
             Why developers choose this workspace
@@ -646,7 +643,7 @@ export const marketingHero = tokens.compose({
       </section>
       
       {/* CTA */}
-      <section className="px-6 max-w-5xl mx-auto">
+      <section className="px-6 max-w-screen mx-auto">
         <Card className="p-8 md:p-12 rounded-2xl bg-white/[0.02] border border-white/6 backdrop-blur-sm shadow-sm hover:shadow-md transition-all">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1 text-center md:text-left">

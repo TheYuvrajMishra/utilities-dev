@@ -24,10 +24,10 @@ export function Button({
   };
   
   const sizes = {
-    sm: 'h-8 px-3 text-sm',
-    md: 'h-10 px-4 text-sm',
-    lg: 'h-12 px-6 text-base',
-    xl: 'h-14 px-8 text-[15px]'
+    sm: 'h-7 px-2 text-sm',
+    md: 'h-9 px-3 text-sm',
+    lg: 'h-10 px-4 text-sm',
+    xl: 'h-11 px-5 text-[14px]'
   };
   
   // ensure button type defaults to button (avoid accidental form submit)
