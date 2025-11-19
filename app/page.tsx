@@ -14,7 +14,7 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.6),transparent_40%,rgba(0,0,0,0.6))]" />
 
       {/* Hero */}
-      <section className="relative pt px-6 pb-48 max-w-6xl mx-auto">
+      <section className="relative pt px-6 pb-48 max-w-screen mx-auto">
         {/* Decorative elements */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
