@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Terminal, Compass, ScanLine, Layers, Type, Palette, Zap, Code2, Hash, FileJson, CheckCircle2, Shield, Rocket, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import InteractiveCard from "@/components/ui/InteractiveCard";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
         <div className="relative z-0 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
           <div>
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm mb-8 animate-[fadeIn_0.6s_ease-out]">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/4 border border-white/10 backdrop-blur-sm mb-8 animate-[fadeIn_0.6s_ease-out]">
               <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-[10px] font-semibold tracking-[0.3em] uppercase text-white/55">
                 Signal over noise
@@ -30,13 +31,13 @@ export default function Home() {
 
             {/* Main Heading */}
             <h1 className="text-[3.6rem] lg:text-[5rem] xl:text-[4.6rem] font-[275] leading-[0.95] tracking-[-0.02em] max-w-4xl mb-8 animate-[fadeIn_0.8s_ease-out_0.1s_both]">
-              <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white via-white/85 to-white/60">
+              <span className="block text-transparent bg-clip-text bg-linear-to-br from-white via-white/85 to-white/60">
                 Utility rails for
               </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-slate-50 to-purple-100">
+              <span className="block text-transparent bg-clip-text bg-linear-to-r from-blue-100 via-slate-50 to-purple-100">
                 professional product teams
               </span>
-              <span className="block text-white/70 font-[300] tracking-[0.08em] text-base lg:text-lg mt-5 uppercase">
+              <span className="block text-white/70 font-light tracking-[0.08em] text-base lg:text-lg mt-5 uppercase">
                 Built with thin sans serif rhythm · Tested inside shipping roadmaps
               </span>
             </h1>
@@ -72,7 +73,8 @@ export default function Home() {
           </div>
 
           {/* Hero preview card */}
-          <Card className="relative border-white/10 bg-white/[0.015] p-6 md:p-8 overflow-hidden">
+          <InteractiveCard className="cursor-pointer">
+              <Card className="relative border-white/10 bg-white/1.5 p-6 md:p-8 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(120,120,255,0.12),transparent_55%)]" />
             <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.04),transparent)]" />
             <div className="relative space-y-6">
@@ -81,12 +83,12 @@ export default function Home() {
                 <span className="text-emerald-300">Synced</span>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                <div className="rounded-xl border border-white/10 bg-white/3 p-4">
                   <p className="text-[12px] uppercase tracking-[0.3em] text-white/40">Typography</p>
                   <p className="mt-2 text-lg text-white">Switzer / Light</p>
                   <p className="text-[12px] text-white/45">Weights 200–700 · Auto copy CSS</p>
                 </div>
-                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                <div className="rounded-xl border border-white/10 bg-white/3 p-4">
                   <p className="text-[12px] uppercase tracking-[0.3em] text-white/40">Color Lab</p>
                   <p className="mt-2 text-lg text-white">Contrast 8.9</p>
                   <p className="text-[12px] text-white/45">AA compliant · Export tokens</p>
@@ -121,7 +123,8 @@ if (audit.variance &lt; 0.2) {
                 </div>
               </div>
             </div>
-          </Card>
+            </Card>
+          </InteractiveCard>
         </div>
       </section>
 
@@ -129,10 +132,10 @@ if (audit.variance &lt; 0.2) {
       <section className="px-6 max-w-6xl mx-auto pb-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white/50">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-4 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white/50">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> Live sneak peek
             </p>
-            <h2 className="mt-5 text-3xl lg:text-[2.8rem] font-[350] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/85 to-white/60">
+            <h2 className="mt-5 text-3xl lg:text-[2.8rem] font-[350] tracking-tight text-transparent bg-clip-text bg-linear-to-br from-white via-white/85 to-white/60">
               Autonomous workspace that feels invisible
             </h2>
             <p className="mt-5 text-white/60 text-[16px] leading-[1.7]">
@@ -154,8 +157,9 @@ if (audit.variance &lt; 0.2) {
             </ul>
           </div>
 
-          <Card className="relative border-white/10 bg-white/[0.02] p-6 md:p-8 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/5 blur-3xl" />
+          <InteractiveCard className="cursor-pointer">
+            <Card className="relative border-white/10 bg-white/2 p-6 md:p-8 overflow-hidden">
+            <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-purple-500/10 to-pink-500/5 blur-3xl" />
             <div className="relative space-y-5">
               <div className="rounded-2xl border border-white/10 bg-black/40 p-5 shadow-lg">
                 <div className="mb-4 flex items-center gap-2 text-[12px] uppercase tracking-[0.3em] text-white/50">
@@ -167,17 +171,17 @@ if (audit.variance &lt; 0.2) {
                   AI Workspace
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                  <div className="rounded-xl border border-white/10 bg-white/3 p-4">
                     <p className="text-[13px] uppercase tracking-[0.15em] text-white/40">Typography</p>
                     <p className="mt-2 text-lg text-white">Switzer · Display</p>
                     <p className="text-[12px] text-white/50">Weights synced • Preview live</p>
                   </div>
-                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4">
+                  <div className="rounded-xl border border-white/10 bg-white/3 p-4">
                     <p className="text-[13px] uppercase tracking-[0.15em] text-white/40">Formatter</p>
                     <p className="mt-2 text-lg text-white">JSON → Clean</p>
                     <p className="text-[12px] text-white/50">Auto indentation • Lint safe</p>
                   </div>
-                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:col-span-2">
+                  <div className="rounded-xl border border-white/10 bg-white/3 p-4 sm:col-span-2">
                     <div className="flex items-center justify-between text-white/60 text-[13px]">
                       <span>AI Suggestions</span>
                       <span className="text-emerald-300">Streaming…</span>
@@ -211,14 +215,15 @@ if (audit.variance &lt; 0.2) {
                 </div>
               </div>
             </div>
-          </Card>
+            </Card>
+          </InteractiveCard>
         </div>
       </section>
 
       {/* Tool Categories Overview */}
       <section className="px-6 max-w-6xl mx-auto pb-24">
         <div className="text-center mb-20">
-          <h2 className="text-3xl lg:text-5xl font-[350] mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/60">
+          <h2 className="text-3xl lg:text-5xl font-[350] mb-4 tracking-tight text-transparent bg-clip-text bg-linear-to-br from-white via-white/90 to-white/60">
             What&rsquo;s Inside
           </h2>
           <p className="text-white/45 text-[16px] lg:text-[17px] max-w-2xl mx-auto leading-relaxed font-light">
@@ -227,7 +232,7 @@ if (audit.variance &lt; 0.2) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          
+          <InteractiveCard>
           <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/15 transition-colors">
@@ -243,9 +248,10 @@ if (audit.variance &lt; 0.2) {
                 </Link>
               </div>
             </div>
-          </Card>
+            </Card>
+          </InteractiveCard>
 
-          <Card className="p-6 bg-white/[0.025] border-white/10 backdrop-blur-sm hover:bg-white/[0.04] transition-all group">
+          <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-purple-500/10 rounded-lg group-hover:bg-purple-500/15 transition-colors">
                 <Palette className="w-5 h-5 text-purple-400" />
@@ -262,7 +268,7 @@ if (audit.variance &lt; 0.2) {
             </div>
           </Card>
 
-          <Card className="p-6 bg-white/[0.025] border-white/10 backdrop-blur-sm hover:bg-white/[0.04] transition-all group">
+          <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-green-500/10 rounded-lg group-hover:bg-green-500/15 transition-colors">
                 <Zap className="w-5 h-5 text-green-400" />
@@ -279,7 +285,7 @@ if (audit.variance &lt; 0.2) {
             </div>
           </Card>
 
-          <Card className="p-6 bg-white/[0.025] border-white/10 backdrop-blur-sm hover:bg-white/[0.04] transition-all group">
+          <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-orange-500/10 rounded-lg group-hover:bg-orange-500/15 transition-colors">
                 <Code2 className="w-5 h-5 text-orange-400" />
@@ -296,7 +302,7 @@ if (audit.variance &lt; 0.2) {
             </div>
           </Card>
 
-          <Card className="p-6 bg-white/[0.025] border-white/10 backdrop-blur-sm hover:bg-white/[0.04] transition-all group">
+          <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/15 transition-colors">
                 <FileJson className="w-5 h-5 text-cyan-400" />
@@ -313,7 +319,7 @@ if (audit.variance &lt; 0.2) {
             </div>
           </Card>
 
-          <Card className="p-6 bg-white/[0.025] border-white/10 backdrop-blur-sm hover:bg-white/[0.04] transition-all group">
+          <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-pink-500/10 rounded-lg group-hover:bg-pink-500/15 transition-colors">
                 <Hash className="w-5 h-5 text-pink-400" />
@@ -338,7 +344,7 @@ if (audit.variance &lt; 0.2) {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           <div>
-            <h2 className="text-3xl lg:text-[2.75rem] xl:text-5xl font-[350] leading-[1.15] tracking-tight mb-7 text-transparent bg-clip-text bg-gradient-to-br from-white via-white/85 to-white/60">
+            <h2 className="text-3xl lg:text-[2.75rem] xl:text-5xl font-[350] leading-[1.15] tracking-tight mb-7 text-transparent bg-clip-text bg-linear-to-br from-white via-white/85 to-white/60">
               50+ Professional Fonts,<br/>Ready to Use
             </h2>
             <p className="text-white/50 text-[15px] lg:text-[16px] leading-[1.75] mb-7 font-light">
@@ -370,7 +376,7 @@ if (audit.variance &lt; 0.2) {
           </div>
 
           <div className="relative">
-            <Card className="p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-white/10 backdrop-blur-sm">
+            <Card className="p-8 bg-linear-to-br from-white/8 to-white/2 border-white/10 backdrop-blur-sm">
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="text-[11px] text-white/30 uppercase tracking-wider">Sans-Serif</div>
@@ -386,14 +392,14 @@ if (audit.variance &lt; 0.2) {
                 </div>
                 <div className="space-y-2">
                   <div className="text-[11px] text-white/30 uppercase tracking-wider">Display</div>
-                  <div className="text-3xl font-light text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">
+                  <div className="text-3xl font-light text-transparent bg-clip-text bg-linear-to-r from-white to-white/60">
                     Modern & Clean
                   </div>
                 </div>
               </div>
             </Card>
             {/* Glow effect */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl" />
+            <div className="absolute inset-0 -z-10 bg-linear-to-br from-blue-500/10 to-purple-500/10 blur-3xl" />
           </div>
 
         </div>
@@ -423,11 +429,11 @@ if (audit.variance &lt; 0.2) {
               </div>
             </Card>
             {/* Glow effect */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/10 to-pink-500/10 blur-3xl" />
+            <div className="absolute inset-0 -z-10 bg-linear-to-br from-purple-500/10 to-pink-500/10 blur-3xl" />
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl lg:text-[2.75rem] xl:text-5xl font-[350] leading-[1.15] tracking-tight mb-7 text-transparent bg-clip-text bg-gradient-to-br from-purple-300 via-pink-300 to-orange-300">
+            <h2 className="text-3xl lg:text-[2.75rem] xl:text-5xl font-[350] leading-[1.15] tracking-tight mb-7 text-transparent bg-clip-text bg-linear-to-br from-purple-300 via-pink-300 to-orange-300">
               Color Lab for<br/>Design Systems
             </h2>
             <p className="text-white/50 text-[15px] lg:text-[16px] leading-[1.75] mb-7 font-light">
@@ -467,7 +473,7 @@ if (audit.variance &lt; 0.2) {
             <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[12px] uppercase tracking-[0.2em] text-white/50">
               Sneak peek · snippet stream
             </p>
-            <h2 className="mt-5 text-3xl lg:text-[2.75rem] font-[350] tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white/85 to-white/60">
+            <h2 className="mt-5 text-3xl lg:text-[2.75rem] font-[350] tracking-tight text-transparent bg-clip-text bg-linear-to-br from-white via-white/85 to-white/60">
               Ship-ready snippets with AI annotations
             </h2>
             <p className="mt-5 text-white/60 text-[15px] leading-[1.75]">
@@ -490,7 +496,8 @@ if (audit.variance &lt; 0.2) {
                 </Button>
               </Link>
               <Link href="https://github.com/TheYuvrajMishra/utilities-dev" target="_blank" className="text-white/60 text-[14px] hover:text-white/80 transition-colors">
-                Download full library →
+              <Button size="lg" className="gap-2.5" variant="ghost" >Download full library →</Button>
+                
               </Link>
             </div>
           </div>
@@ -544,7 +551,7 @@ export const marketingHero = tokens.compose({
         <div className="grid md:grid-cols-3 gap-8">
           
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+            <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-cyan-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
             <Card className="relative p-6 bg-white/[0.03] border-white/10 backdrop-blur-sm h-full">
               <div className="text-3xl mb-4">🎨</div>
               <h3 className="text-[17px] font-semibold text-white mb-3 tracking-tight">Design Handoff</h3>
@@ -556,7 +563,7 @@ export const marketingHero = tokens.compose({
           </div>
 
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+            <div className="absolute inset-0 bg-linear-to-br from-purple-500/10 to-pink-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
             <Card className="relative p-6 bg-white/[0.03] border-white/10 backdrop-blur-sm h-full">
               <div className="text-3xl mb-4">⚡</div>
               <h3 className="text-[17px] font-semibold text-white mb-3 tracking-tight">Rapid Prototyping</h3>
@@ -568,7 +575,7 @@ export const marketingHero = tokens.compose({
           </div>
 
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+            <div className="absolute inset-0 bg-linear-to-br from-orange-500/10 to-red-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
             <Card className="relative p-6 bg-white/[0.03] border-white/10 backdrop-blur-sm h-full">
               <div className="text-3xl mb-4">🔧</div>
               <h3 className="text-[17px] font-semibold text-white mb-3 tracking-tight">Data Wrangling</h3>
@@ -596,7 +603,7 @@ export const marketingHero = tokens.compose({
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-xl bg-linear-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center mb-4">
               <CheckCircle2 className="w-6 h-6 text-blue-400" />
             </div>
             <h3 className="text-base font-medium text-white mb-2">Zero Configuration</h3>
@@ -606,7 +613,7 @@ export const marketingHero = tokens.compose({
           </Card>
 
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/10 flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-xl bg-linear-to-br from-green-500/20 to-green-600/10 flex items-center justify-center mb-4">
               <Shield className="w-6 h-6 text-green-400" />
             </div>
             <h3 className="text-base font-medium text-white mb-2">Privacy First</h3>
@@ -616,7 +623,7 @@ export const marketingHero = tokens.compose({
           </Card>
 
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-xl bg-linear-to-br from-purple-500/20 to-purple-600/10 flex items-center justify-center mb-4">
               <Rocket className="w-6 h-6 text-purple-400" />
             </div>
             <h3 className="text-base font-medium text-white mb-2">Lightning Fast</h3>
@@ -626,7 +633,7 @@ export const marketingHero = tokens.compose({
           </Card>
 
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center mb-4">
+            <div className="w-12 h-12 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center mb-4">
               <Sparkles className="w-6 h-6 text-orange-400" />
             </div>
             <h3 className="text-base font-medium text-white mb-2">Production Ready</h3>

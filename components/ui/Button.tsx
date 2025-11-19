@@ -14,10 +14,10 @@ export function Button({
   children, 
   ...props 
 }: ButtonProps) {
-  const baseStyles = 'group relative isolate inline-flex items-center justify-center rounded-2xl font-medium tracking-tight transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 disabled:opacity-40 disabled:pointer-events-none overflow-hidden shadow-[0_1px_0_rgba(255,255,255,0.15)]';
+  const baseStyles = 'group cursor-pointer relative isolate inline-flex items-center justify-center rounded-2xl font-medium tracking-tight transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 disabled:opacity-40 disabled:pointer-events-none overflow-hidden shadow-[0_1px_0_rgba(255,255,255,0.15)]';
   
   const variants = {
-    primary: 'text-white bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.25),rgba(99,102,241,0.35))] border border-white/15 hover:border-white/30 hover:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.3),rgba(99,102,241,0.45))] shadow-[0_25px_60px_rgba(79,70,229,0.35)]',
+    primary: 'text-white bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),rgba(99,102,241,0.01))] border border-white/15 hover:border-white/30 hover:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.3),rgba(99,102,241,0.45))]',
     secondary: 'text-white bg-white/8 border border-white/15 backdrop-blur hover:bg-white/12 hover:border-white/25 shadow-[0_20px_45px_rgba(15,23,42,0.45)]',
     ghost: 'text-white/75 border border-white/10 bg-transparent hover:bg-white/5 hover:text-white shadow-none',
     outline: 'text-white border border-white/25 bg-white/3 hover:bg-white/8 hover:border-white/40 shadow-[0_15px_35px_rgba(255,255,255,0.08)]',
