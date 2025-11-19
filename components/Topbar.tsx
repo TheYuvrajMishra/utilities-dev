@@ -37,7 +37,7 @@ export function Topbar({ onMenuClick }: TopbarProps) {
       {/* Right section */}
       <div className="flex items-center gap-2">
         <a
-          href="https://github.com"
+          href="https://github.com/TheYuvrajMishra/utilities-dev"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden sm:flex items-center gap-2 px-4 h-9 bg-zinc-900 hover:bg-zinc-800 border border-border rounded-lg text-sm font-medium transition-colors"

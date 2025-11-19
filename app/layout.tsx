@@ -39,6 +39,19 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground`}
       >
+        {/* Noise + Vignette + Texture */}
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.07),transparent_60%)]" />
+      <div
+        className="pointer-events-none fixed inset-0 z-99 mix-blend-overlay"
+        style={{
+          backgroundImage: "url('https://tse3.mm.bing.net/th/id/OIP.cBntmxAaGCUfgGY-9tCEegHaGr?rs=1&pid=ImgDetMain&o=7&rm=3')",
+          backgroundRepeat: 'repeat',
+          // small tile size to create a subtle repeating pattern across the screen
+          backgroundSize: '24px 24px',
+          opacity: 0.2,
+        }}
+      />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.6),transparent_40%,rgba(0,0,0,0.6))]" />
         <LayoutShell>{children}</LayoutShell>
         <ToastProvider />
       </body>
