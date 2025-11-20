@@ -74,7 +74,7 @@ export default function IconsPage() {
   const [iconSize, setIconSize] = useState(24);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
-  const iconsPerPage = 120; // Show 120 icons per page for better performance
+  const iconsPerPage = 60; // Show 120 icons per page for better performance
 
   // Memoize filtered icons to avoid recalculating on every render
   const filteredIcons = useMemo(() => iconList.filter((icon) => {
@@ -268,28 +268,6 @@ export default function IconsPage() {
           ))}
         </div>
       </div>
-
-      {/* Stats */}
-      <Card className="p-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="space-y-1">
-            <div className="text-2xl font-bold text-primary">{iconList.length}</div>
-            <div className="text-sm text-muted">Total Icons</div>
-          </div>
-          <div className="space-y-1">
-            <div className="text-2xl font-bold text-primary">{filteredIcons.length}</div>
-            <div className="text-sm text-muted">Showing {startIndex + 1}-{Math.min(endIndex, filteredIcons.length)}</div>
-          </div>
-          <div className="space-y-1">
-            <div className="text-2xl font-bold text-primary">{iconSize}px</div>
-            <div className="text-sm text-muted">Current Size</div>
-          </div>
-          <div className="space-y-1">
-            <div className="text-2xl font-bold text-primary">MIT</div>
-            <div className="text-sm text-muted">License</div>
-          </div>
-        </div>
-      </Card>
 
       {/* Icons Grid */}
       <section id="icons-section" className="space-y-4">
