@@ -9,7 +9,9 @@ export function Card({ className, children, ...props }: CardProps) {
   return (
     <div
       className={clsx(
-        'bg-card border border-border rounded-lg backdrop-blur-sm',
+        // Default to a dark, translucent card that matches the landing page style.
+        // Consumers can still override or extend via the `className` prop.
+        'rounded-2xl border border-white/10 bg-black/30 backdrop-blur-sm',
         className
       )}
       {...props}

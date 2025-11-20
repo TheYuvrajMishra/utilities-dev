@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/Card';
+import InteractiveCard from '@/components/ui/InteractiveCard';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Copy, Check, Eye, X } from 'lucide-react';
@@ -735,7 +736,7 @@ export default function TypographyPage() {
       {/* Header */}
       <div className="space-y-4">
         <div className="space-y-2">
-          <h1 className="text-3xl lg:text-4xl font-bold tracking-tight">Typography Library</h1>
+          <h1 className="text-3xl lg:text-5xl font-thin tracking-tight">Typography Library</h1>
           <p className="text-muted">
             Professional font collection with live previews and CSS snippets
           </p>
@@ -781,7 +782,8 @@ export default function TypographyPage() {
         </h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {fontPairings.map((pairing) => (
-            <Card key={pairing.title} className="p-6">
+            <InteractiveCard key={pairing.title}>
+            <Card className="p-6">
               <div className="space-y-3">
                 <h3 className="text-lg font-semibold text-primary">{pairing.title}</h3>
                 <div className="space-y-2">
@@ -799,6 +801,7 @@ export default function TypographyPage() {
                 </div>
               </div>
             </Card>
+            </InteractiveCard>
           ))}
         </div>
       </section>
@@ -818,7 +821,8 @@ export default function TypographyPage() {
         
         <div className="space-y-4">
           {currentFonts.map((font, index) => (
-            <Card key={font.name} className="p-6">
+            <InteractiveCard key={font.name}>
+            <Card className="p-6">
               <div className="space-y-4">
                 {/* Font Header */}
                 <div className="flex items-start justify-between gap-4">
@@ -854,20 +858,20 @@ export default function TypographyPage() {
                 </div>
 
                 {/* Font Preview */}
-                <div className="p-6 bg-zinc-900 rounded-lg border border-border">
+                <Card className="p-6">
                   <p
                     className="text-2xl"
                     style={{ fontFamily: font.name }}
                   >
                     {previewText || font.preview}
                   </p>
-                </div>
+                </Card>
 
                 {/* CSS Code */}
                 <div className="flex items-center gap-2">
-                  <code className="flex-1 px-4 py-3 bg-zinc-900 rounded-lg text-sm font-mono">
+                  <Card className="flex-1 px-4 py-3 text-sm font-mono">
                     {font.css}
-                  </code>
+                  </Card>
                   <Button
                     variant="ghost"
                     size="sm"
@@ -883,6 +887,7 @@ export default function TypographyPage() {
                 </div>
               </div>
             </Card>
+            </InteractiveCard>
           ))}
         </div>
 
