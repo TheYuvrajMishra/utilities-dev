@@ -247,6 +247,8 @@ if (audit.variance &lt; 0.2) {
             </div>
             </Card>
           </InteractiveCard>
+          <InteractiveCard>
+          
 
           <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
@@ -264,7 +266,9 @@ if (audit.variance &lt; 0.2) {
               </div>
             </div>
           </Card>
+          </InteractiveCard>
 
+          <InteractiveCard>
           <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-green-500/10 rounded-lg group-hover:bg-green-500/15 transition-colors">
@@ -281,7 +285,9 @@ if (audit.variance &lt; 0.2) {
               </div>
             </div>
           </Card>
+          </InteractiveCard>
 
+          <InteractiveCard>
           <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-orange-500/10 rounded-lg group-hover:bg-orange-500/15 transition-colors">
@@ -298,7 +304,9 @@ if (audit.variance &lt; 0.2) {
               </div>
             </div>
           </Card>
+          </InteractiveCard>
 
+          <InteractiveCard>
           <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-cyan-500/10 rounded-lg group-hover:bg-cyan-500/15 transition-colors">
@@ -315,7 +323,8 @@ if (audit.variance &lt; 0.2) {
               </div>
             </div>
           </Card>
-
+          </InteractiveCard>
+          <InteractiveCard>
           <Card className="p-6 bg-white/2.5 border-white/10 backdrop-blur-sm hover:bg-white/4 transition-all group">
             <div className="flex items-start gap-4">
               <div className="p-2.5 bg-pink-500/10 rounded-lg group-hover:bg-pink-500/15 transition-colors">
@@ -332,6 +341,7 @@ if (audit.variance &lt; 0.2) {
               </div>
             </div>
           </Card>
+          </InteractiveCard>
 
         </div>
       </section>
@@ -373,6 +383,7 @@ if (audit.variance &lt; 0.2) {
           </div>
 
           <div className="relative">
+            <InteractiveCard>
             <Card className="p-8 bg-linear-to-br from-white/8 to-white/2 border-white/10 backdrop-blur-sm">
               <div className="space-y-6">
                 <div className="space-y-2">
@@ -395,6 +406,7 @@ if (audit.variance &lt; 0.2) {
                 </div>
               </div>
             </Card>
+            </InteractiveCard>
             {/* Glow effect */}
             <div className="absolute inset-0 -z-10 bg-linear-to-br from-blue-500/10 to-purple-500/10 blur-3xl" />
           </div>
@@ -407,6 +419,7 @@ if (audit.variance &lt; 0.2) {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           <div className="order-2 lg:order-1 relative">
+            <InteractiveCard>
             <Card className="p-8 bg-gradient-to-br from-white/[0.08] to-white/[0.02] border-white/10 backdrop-blur-sm">
               <div className="space-y-4">
                 <div className="flex gap-3">
@@ -425,6 +438,7 @@ if (audit.variance &lt; 0.2) {
                 </div>
               </div>
             </Card>
+            </InteractiveCard>
             {/* Glow effect */}
             <div className="absolute inset-0 -z-10 bg-linear-to-br from-purple-500/10 to-pink-500/10 blur-3xl" />
           </div>
@@ -499,6 +513,7 @@ if (audit.variance &lt; 0.2) {
             </div>
           </div>
 
+          <InteractiveCard>
           <Card className="relative border-white/10 bg-black/40 p-0 overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-12 bg-gradient-to-r from-emerald-500/30 via-blue-500/20 to-purple-500/30" />
             <div className="relative p-6">
@@ -531,6 +546,7 @@ export const marketingHero = tokens.compose({
               </div>
             </div>
           </Card>
+          </InteractiveCard>
         </div>
       </section>
 
@@ -549,6 +565,7 @@ export const marketingHero = tokens.compose({
           
           <div className="relative group">
             <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-cyan-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+            <InteractiveCard>
             <Card className="relative p-6 bg-white/[0.03] border-white/10 backdrop-blur-sm h-full">
               <div className="text-3xl mb-4">🎨</div>
               <h3 className="text-[17px] font-semibold text-white mb-3 tracking-tight">Design Handoff</h3>
@@ -557,10 +574,12 @@ export const marketingHero = tokens.compose({
                 No more copy-pasting from Figma comments.
               </p>
             </Card>
+            </InteractiveCard>
           </div>
 
           <div className="relative group">
             <div className="absolute inset-0 bg-linear-to-br from-purple-500/10 to-pink-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+            <InteractiveCard>
             <Card className="relative p-6 bg-white/[0.03] border-white/10 backdrop-blur-sm h-full">
               <div className="text-3xl mb-4">⚡</div>
               <h3 className="text-[17px] font-semibold text-white mb-3 tracking-tight">Rapid Prototyping</h3>
@@ -569,10 +588,12 @@ export const marketingHero = tokens.compose({
                 Everything you need to mock APIs and test flows quickly.
               </p>
             </Card>
+            </InteractiveCard>
           </div>
 
           <div className="relative group">
             <div className="absolute inset-0 bg-linear-to-br from-orange-500/10 to-red-500/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+            <InteractiveCard>
             <Card className="relative p-6 bg-white/[0.03] border-white/10 backdrop-blur-sm h-full">
               <div className="text-3xl mb-4">🔧</div>
               <h3 className="text-[17px] font-semibold text-white mb-3 tracking-tight">Data Wrangling</h3>
@@ -581,6 +602,7 @@ export const marketingHero = tokens.compose({
                 Transform messy data into clean outputs instantly.
               </p>
             </Card>
+            </InteractiveCard>
           </div>
 
         </div>
@@ -599,26 +621,31 @@ export const marketingHero = tokens.compose({
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           
+          <InteractiveCard>
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
             <div className="w-12 h-12 rounded-xl bg-linear-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center mb-4">
               <CheckCircle2 className="w-6 h-6 text-blue-400" />
             </div>
             <h3 className="text-base font-medium text-white mb-2">Zero Configuration</h3>
             <p className="text-[13px] text-white/35 leading-relaxed">
-              Open and use. No setup, no accounts, no bloat. Just tools that work.
+              Open and use. No setup, no accounts, no bloat.
             </p>
           </Card>
+          </InteractiveCard>
 
+          <InteractiveCard>
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
             <div className="w-12 h-12 rounded-xl bg-linear-to-br from-green-500/20 to-green-600/10 flex items-center justify-center mb-4">
               <Shield className="w-6 h-6 text-green-400" />
             </div>
             <h3 className="text-base font-medium text-white mb-2">Privacy First</h3>
             <p className="text-[13px] text-white/35 leading-relaxed">
-              Everything runs locally. Your data never leaves your browser. No tracking pixels.
+              Everything runs locally. Your data never leaves your browser.
             </p>
           </Card>
+          </InteractiveCard>
 
+          <InteractiveCard>
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
             <div className="w-12 h-12 rounded-xl bg-linear-to-br from-purple-500/20 to-purple-600/10 flex items-center justify-center mb-4">
               <Rocket className="w-6 h-6 text-purple-400" />
@@ -628,7 +655,9 @@ export const marketingHero = tokens.compose({
               Built with Next.js 14. Instant page loads, smooth interactions, zero lag.
             </p>
           </Card>
+          </InteractiveCard>
 
+          <InteractiveCard>
           <Card className="p-6 bg-white/[0.02] border-white/10 backdrop-blur-sm">
             <div className="w-12 h-12 rounded-xl bg-linear-to-br from-orange-500/20 to-orange-600/10 flex items-center justify-center mb-4">
               <Sparkles className="w-6 h-6 text-orange-400" />
@@ -638,12 +667,14 @@ export const marketingHero = tokens.compose({
               Copy outputs directly into your projects. No cleanup needed.
             </p>
           </Card>
+          </InteractiveCard>
 
         </div>
       </section>
       
       {/* CTA */}
       <section className="px-6 max-w-screen mx-auto">
+        <InteractiveCard>
         <Card className="p-8 md:p-12 rounded-2xl bg-white/[0.02] border border-white/6 backdrop-blur-sm shadow-sm hover:shadow-md transition-all">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1 text-center md:text-left">
@@ -690,6 +721,7 @@ export const marketingHero = tokens.compose({
             </div>
           </div>
         </Card>
+        </InteractiveCard>
       </section>
     </main>
     </>
