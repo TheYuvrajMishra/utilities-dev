@@ -8,11 +8,6 @@ export default function Home() {
   return (
     <>
     <main className="relative overflow-hidden">
-      {/* Noise + Vignette + Texture
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.07),transparent_60%)]" />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[url('https://tse3.mm.bing.net/th/id/OIP.cBntmxAaGCUfgGY-9tCEegHaGr?rs=1&pid=ImgDetMain&o=7&rm=3')] opacity-[0.5] mix-blend-overlay" />
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.6),transparent_40%,rgba(0,0,0,0.6))]" /> */}
-
       {/* Hero */}
       <section className="relative pt px-6 pb-48 max-w-screen mx-auto">
         
