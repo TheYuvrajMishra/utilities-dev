@@ -68,24 +68,57 @@ function blendTowards(hex: string, targetHex: string, t: number) {
 }
 
 function suggestAccessibleForeground(fg: string, bg: string, targetRatio = 4.5) {
-  // First try white/black
-  const whiteRatio = contrastRatio('#ffffff', bg);
-  const blackRatio = contrastRatio('#000000', bg);
-  if (whiteRatio >= targetRatio) return { suggestion: '#ffffff', ratio: whiteRatio };
-  if (blackRatio >= targetRatio) return { suggestion: '#000000', ratio: blackRatio };
+  // High-contrast color palette to try first
+  const highContrastColors = [
+    '#ffffff', '#000000', '#ffff00', '#00ffff', '#ff00ff',
+    '#ff0000', '#00ff00', '#0000ff', '#ffa500', '#800080',
+    '#ffc0cb', '#a52a2a', '#808080', '#000080', '#008000'
+  ];
 
-  // Otherwise, blend the foreground toward white and black and pick smallest step that meets target
-  // Search t from 0 to 1
-  for (let i = 1; i <= 100; i++) {
-    const t = i / 100;
-    const tryWhite = blendTowards(fg, '#ffffff', t);
-    if (contrastRatio(tryWhite, bg) >= targetRatio) return { suggestion: tryWhite, ratio: contrastRatio(tryWhite, bg) };
-    const tryBlack = blendTowards(fg, '#000000', t);
-    if (contrastRatio(tryBlack, bg) >= targetRatio) return { suggestion: tryBlack, ratio: contrastRatio(tryBlack, bg) };
+  // Find the best high-contrast color
+  let bestSuggestion = { suggestion: '#ffffff', ratio: contrastRatio('#ffffff', bg) };
+  for (const color of highContrastColors) {
+    const ratio = contrastRatio(color, bg);
+    if (ratio >= targetRatio && ratio > bestSuggestion.ratio) {
+      bestSuggestion = { suggestion: color, ratio };
+    }
   }
 
-  // fallback: return white with its ratio
-  return { suggestion: '#ffffff', ratio: whiteRatio };
+  // If we found a good high-contrast color, return it
+  if (bestSuggestion.ratio >= targetRatio) {
+    return bestSuggestion;
+  }
+
+  // Otherwise, try blending the original foreground toward high-contrast colors
+  const blendTargets = ['#ffffff', '#000000', '#ffff00', '#00ffff', '#ff00ff'];
+
+  for (const target of blendTargets) {
+    // Search t from 0.1 to 0.9 in steps of 0.1
+    for (let i = 1; i <= 9; i++) {
+      const t = i / 10;
+      const blended = blendTowards(fg, target, t);
+      const ratio = contrastRatio(blended, bg);
+      if (ratio >= targetRatio && ratio > bestSuggestion.ratio) {
+        bestSuggestion = { suggestion: blended, ratio };
+      }
+    }
+  }
+
+  // If still no good suggestion, try more aggressive blending
+  if (bestSuggestion.ratio < targetRatio) {
+    for (const target of blendTargets) {
+      for (let i = 1; i <= 20; i++) {
+        const t = i / 20;
+        const blended = blendTowards(fg, target, t);
+        const ratio = contrastRatio(blended, bg);
+        if (ratio >= targetRatio) {
+          return { suggestion: blended, ratio };
+        }
+      }
+    }
+  }
+
+  return bestSuggestion;
 }
 
 export default function ColorsPage() {
